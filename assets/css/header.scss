@@ -1,6 +1,6 @@
 @import '_mixin', '_variables';
 
-.header{position: fixed; z-index: 9999; background-color: #fff;}
+.header{position: fixed; background-color: #fff;}
 .header.header_pc{@include size(15vw, 100vh); background-color: white; border-right: 1px solid $grey_03; padding: 0rem 2rem;
   .top{min-height: 6.25rem; @include border_tnb($top:0,$color:$grey_03); @include flex($align:center);
     .logo{width: 50%;
@@ -13,11 +13,16 @@
 
   .nav .gnb_items{@include flex($direction:column);
     .gnb_item{width: 100%;
-      &>a{width: 100%; padding: .625rem; @include flex($gap:0.625rem,$align:center); color:$grey_01; font-size: 1.125rem; font-weight: 500;
+      &>a{width: 100%; padding: .625rem; @include flex($gap:0.625rem,$align:center);
         .img_wrapper{@include size(20px, 20px); @include flex($align:center,$justify:center);
           img{filter: invert(48%) sepia(4%) saturate(11%) hue-rotate(331deg) brightness(94%) contrast(85%);}
         }
+        .text_wrapper{font-size: 1.125rem; font-weight: 500; color: $grey_01;}
       }//gnb items > a end
+      &:nth-child(3){
+        .text_wrapper:after{content: ""; background-color: $main_color_02; border-radius: 50px; position: relative; top: -0.7rem; left: 0.313rem; display: inline-block; @include size(5px, 5px);}
+        .new{background-color: $main_color_02; color: #fff; border-radius: 50px; padding: 0.188rem 0.625rem; position: absolute; right: calc(2rem + 0.625rem);}
+      }
       &:nth-child(n+2):nth-child(-n+4) > a img{width: 90%;}
 
       &.active > a, & > a:hover{background-color: $grey_05; border-radius: 0.625rem;}
@@ -32,20 +37,25 @@
       &.active{
         .lnb_items{display: flex !important;}
       }
-      &:nth-child(1).active > a{color: #000 !important;
+      &:nth-child(1).active > a{
         img{@include filter_black;}
+        .text_wrapper{color: #000 !important;}
       }
-      &:nth-child(2).active > a{color: $main_color_01 !important;
+      &:nth-child(2).active > a{
         img{@include filter_01;}
+        .text_wrapper{color: $main_color_01 !important;}
       }
-      &:nth-child(3).active > a{color: $main_color_02 !important;
+      &:nth-child(3).active > a{
         img{@include filter_02;}
+        .text_wrapper{color: $main_color_02 !important;}
       }
-      &:nth-child(4).active > a{color: $main_color_03 !important;
+      &:nth-child(4).active > a{
         img{@include filter_03;}
+        .text_wrapper{color: $main_color_03 !important;}
       }
-      &:nth-child(5).active > a{color: $main_color_04 !important;
+      &:nth-child(5).active > a{
         img{@include filter_04;}
+        .text_wrapper{color: $main_color_04 !important;}
       }
     } //.gnb_item end
   }//.nav .gnb_items end
@@ -58,22 +68,44 @@
     }
   }
 }//.header_pc end
-.header.header_mb{min-height: 5rem; width: 100%; padding: .625rem; @include border_tnb($top:0,$color:$grey_03); @include flex($align:center,$justify:space-between);
-  .logo{width: 30%;}
-  .hamburger_btn{width: 8%; z-index: 99999; @include flex($gap:6px, $direction:column);
+.header.header_mb{min-height: 5rem; width: 100%; padding: .625rem; @include border_tnb($top:0,$color:$grey_03); @include flex($align:center,$justify:space-between); z-index: 1;
+  .logo{width: 20%;}
+  .hamburger_btn{width: 5%; z-index: 99999; @include flex($gap:6px, $direction:column);
     .bar{@include size(100%, 3px); background-color: #000; transition: .3s; border-radius: 10px;}
-    &:hover{
-      .bar{
-        &:nth-child(1){transform: rotate(45deg) translate(5px, 5px);}
-        &:nth-child(2){opacity: 0;}
-        &:nth-child(3){transform: rotate(-45deg) translate(6px, -6px);}
-      }
+  }
+  &.slide_on{background-color: transparent; border: none !important;
+    .bar{background-color: #fff;
+      &:nth-child(1){transform: rotate(45deg) translate(5px, 10px);}
+      &:nth-child(2){opacity: 0;}
+      &:nth-child(3){transform: rotate(-45deg) translate(3px, -7px);}
     }
   }
 }
+.overlay{@include size(100vw, 100vh); background-color: rgb(0,0,0,0.7); position: fixed; z-index: 0; display: none;
+  &.slide_on{display: block;}
+}
 @include pc{
-  .header.header_mb{display: none;}
+  .header.header_mb, .overlay{display: none;}
 }
 @include max-tb{
-  .header.header_pc{display: none;}
+  .header.header_pc{width: 90%; z-index: 2; transform: translateX(-100%); transition: .5s;
+    &.slide_on{transform: translateX(0);}
+  }
+}
+@include tb{
+  .header.header_pc{
+    .logo{width: 30% !important;}
+  }
+}
+@include mb{
+  .header.header_pc{width: 85%; padding: 0 .625rem;
+    .top,.bottom{min-height: 5rem;}
+    .nav{
+      .gnb_items{gap: 0.625rem;}
+    }
+  }
+  .header.header_mb{
+    .logo{width: 30%;}
+    .hamburger_btn{width: 10%;}
+  }
 }
