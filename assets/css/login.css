@@ -1,0 +1,97 @@
+body.login {
+  background: #f7f7f7;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .container_login {
+  width: 600px;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.03);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #fff;
+  border-radius: 0.625rem;
+}
+.container .container_login .logo {
+  width: 30%;
+}
+.container .container_login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+.container .container_login__form label {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -9999%;
+}
+.container .container_login__form input {
+  width: 100%;
+  min-height: 2.5rem;
+  background: none;
+  border-width: 0 0 1px 0 !important;
+  border: solid #e3e3e3;
+  font-size: 1rem;
+  padding: 0.625rem;
+}
+.container .container_login__form input:focus {
+  outline: none;
+}
+.container .container_login__form input:-webkit-autofill, .container .container_login__form input:-webkit-autofill:hover, .container .container_login__form input:-webkit-autofill:focus, .container .container_login__form input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-transition: background-color 9999s ease-out;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: #000 !important;
+}
+.container .container_login button[type=submit] {
+  width: 100%;
+  background-color: #000;
+  color: white;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  margin-top: 1.25rem;
+  padding: 0.625rem;
+  cursor: pointer;
+}
+.container .wrapper_ip {
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  color: #aaa;
+  font-weight: 500;
+  width: 100%;
+  padding: 0 0.625rem;
+  text-align: center;
+}
+.container .wrapper_ip .ip_address {
+  color: #000;
+}
+
+@media (max-width: 767px) {
+  .container .container_login {
+    width: 100%;
+    padding: 2rem;
+    gap: 1.25rem;
+  }
+  .container .container_login .logo {
+    width: 40%;
+  }
+  .container .container_login button[type=submit] {
+    margin-top: 0;
+  }
+}/*# sourceMappingURL=login.css.map */

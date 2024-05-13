@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+#container.intro-page{position:relative;height:100vh;padding:37px 34px;background:url(/assets/images/intro/bg.png) bottom right no-repeat;box-sizing:border-box;background-color:#ded8d4 ;}
+.intro-page .intro{display:flex}
+.intro-page .intro .intro__logo{display:inline-block}
+.intro-page .user-name{display:block;margin-top:13px;font-size:20px;line-height:43px;font-weight:700;color:#000;letter-spacing:-0.1px;}
+.intro-page .welcome-text{color:#000;font-size:15px;line-height:18px;letter-spacing:-0.9px;}
+.intro-page .welcome-text span{font-weight:500;}
+.intro-page .common-btn{position:absolute;bottom:37px;left:34px;right:34px;width:auto}
