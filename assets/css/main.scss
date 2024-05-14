@@ -1,0 +1,51 @@
+@import '_mixin', '_variables';
+
+.top_container_table, .bottom.container{
+  .button_wrapper{border-radius: 50px; padding: 0.5rem; @include size(2rem, 2rem);
+    img{padding-left: 2px;}
+  }
+}
+.top_container_table{@include flex($justify:space-between);
+  &>div{
+    .table_container{border-radius: 0.625rem 0.625rem 0 0 !important;}
+    .table_container-title{padding: 0.625rem 0.625rem 0.625rem 1.25rem; @include flex($align:center,$justify:space-between); border-radius: 0 0 0.625rem 0.625rem;
+      .sub_title{@include flex($gap:0.625rem, $align:center); color: white;
+        .text_wrapper{font-size: 1.125rem;}
+        .img_wrapper{width: 1.25rem; display: flex;
+          img{@include filter_white;}
+        }
+      }
+      .button_wrapper{background-color: rgb(255,255,255,.7); transition: .3s;
+        &:hover{background-color: #fff;}
+      }
+    }
+    &.new_client{width: calc(55% - 0.625rem);
+      .table_container-title{background-color: $main_color_02;
+        .button_wrapper img{@include filter_02;}
+      }
+    }
+    &.new_staff{width: calc(45% - 0.625rem);
+      .table_container-title{background-color: $main_color_01;
+        .button_wrapper img{@include filter_01;}
+      }
+    }
+  }
+}
+.bottom.container{
+  a.button_container{@include flex($gap:0.625rem, $align:center); color: $grey_02;
+    .img_wrapper{background-color: $grey_02;
+      img{@include filter_white;}
+    }
+    &:hover{
+      .img_wrapper{background-color: $grey_01;}
+    }
+  }
+}
+@include max-tb{
+  .top_container_table{flex-direction: column;
+    &>div{width: 100% !important;}
+  }
+  .bottom.container{
+    a.button_container{justify-content: flex-end; margin-top: 1.25rem;}
+  }
+}
