@@ -1,14 +1,88 @@
 @import '_mixin', '_variables';
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video, button,input, div, article, section{line-height: 1.3em; font-size: 1rem;}
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video, button,input, div, article, section{line-height: 1.3em; font-size: 1rem; font-weight: 400;}
+img{@include size(100%, 100%);}
 #body{min-height: 100vh;background-color: $grey_05;}
 input,textarea{&::placeholder{color: $grey_03;}}
-.container{display: block; padding: 0.625rem;}
+.container{display: block;}
 
+h1{font-size: 2rem; font-weight: 700 !important;}
+h2{font-size: 1.8rem; font-weight: 700 !important;}
+h3{font-size: 1.5rem;}
+h4,p{font-size: 1rem;}
+h5{font-size: 0.875rem;}
+h6{font-size: 0.75rem;}
+
+select{appearance: none; background-color: white !important;
+  -webkit-appearance: none; /* for chrome */
+  -moz-appearance: none; /*for firefox*/
+
+  background:url('/assets/images/common/select_icon.svg') no-repeat right 10px center; background-size: 10px;
+}
+select::-ms-expand{ display: none; } /*for IE10,11*/
+select,input:not(input[type=checkbox]){min-height: 33px;}
+
+#body{padding: 0 2rem 0.625rem;
+  .page_title,.section_title{line-height: 1; @include flex($align:flex-end,$gap:0.625rem); margin-bottom: 2rem;
+    .sub_title{font-size: .8em; color: $grey_02; font-weight: 700;}
+  }
+  .section_title{margin-top: 3rem; justify-content: space-between;}
+  .table_container{background-color: #fff; padding: 1.25rem 1.25rem 0.625rem; border-radius: 0.625rem;
+    table{width: 100%;
+      tr{
+        th,td{text-align: left;
+          &,a span{font-size: 0.875rem !important; font-weight: 400; color: $grey_02; }
+          a{line-height: 1em !important;}
+
+          &.table-list-date{width: 12rem; min-width: 12rem;}
+        }
+        th{padding: 0 0 0.625rem;}
+        td{padding: 1rem 0; @include border_tnb(1px,0,$grey_05);
+          &.table-list{
+            &-name .client, &-jop, &-id,&-as{color: #000; font-weight: 500;}
+            &-management{
+              .img_wrapper{@include size(1rem, 1rem);}
+            }
+          }
+        }
+      }
+    }
+  }
+}
 @include pc{
-  #body{margin-left: 15vw;}
+  #body{margin-left: 15vw;
+    .page_title{
+      &:not(.section_title){min-height: 6.25rem;}
+    }
+  }
+}
+@include max-tb{
+  h1{font-size: calc(1.8rem + 0.2 * ((100vw - 20rem) / 1023));}
+  h2{font-size: calc(1.6rem + 0.2 * ((100vw - 20rem) / 1023));}
+  h3{font-size: calc(1.3rem + 0.2 * ((100vw - 20rem) / 1023));}
+  h4,p{font-size: calc(1rem + 0.2 * ((100vw - 20rem) / 1023));}
+  h5{font-size: calc(0.875rem + 0.2 * ((100vw - 20rem) / 1023));}
+  h6{font-size: calc(0.75rem + 0.2 * ((100vw - 20rem) / 1023));}
+
+  #body{position: relative; top: 5rem; padding: 1.25rem 0.625rem 0.625rem;}
+  .page_title,.section_title{margin-bottom: 1rem !important;}
+  .table_container{overflow-x: auto;
+    table{white-space: nowrap;
+      tr{
+        th,td{
+          &:not(&:first-child){padding: 1rem !important;}
+
+          &.table-list-date{width: 9rem !important; min-width: 9rem !important;}
+        }
+      }
+    }
+  }
+}
+@include min-tb{
+  .button_container.mb{display: none !important;}
 }
 @include mb{
+  .button_container.pc{display: none !important;}
   .container{width: 100%;}
 }
