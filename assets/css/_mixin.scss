@@ -19,6 +19,7 @@
 
 @mixin filter_white{filter:brightness(0) invert(1);}
 @mixin filter_black{filter: grayscale(100%) brightness(0);}
+@mixin filter_grey_02{filter: invert(65%) sepia(47%) saturate(5%) hue-rotate(9deg) brightness(95%) contrast(89%);}
 @mixin filter_01{filter: invert(31%) sepia(69%) saturate(2758%) hue-rotate(217deg) brightness(99%) contrast(106%) !important;}
 @mixin filter_02{filter: invert(54%) sepia(70%) saturate(2191%) hue-rotate(317deg) brightness(101%) contrast(91%) !important;}
 @mixin filter_03{filter: invert(91%) sepia(17%) saturate(2474%) hue-rotate(321deg) brightness(101%) contrast(99%) !important;}
