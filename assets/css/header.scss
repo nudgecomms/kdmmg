@@ -7,7 +7,8 @@
       img{width: 100%;}
     }
   }
-  .wrapper_today{padding: 2rem 0; font-size: 0.875rem; color: $grey_02;
+  .wrapper_today{padding: 2rem 0 calc(2rem - 0.625rem); color: $grey_02;
+    &,.today{font-size: 0.875rem;}
     .id{color: $grey_01;}
   }
 
