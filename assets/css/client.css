@@ -1,0 +1,111 @@
+@charset "UTF-8";
+.button_container {
+  gap: 0.625rem !important;
+}
+.button_container a {
+  border-color: #f46674;
+  color: #f46674;
+}
+.button_container a .img_wrapper {
+  width: 15px;
+  display: flex;
+}
+.button_container a .img_wrapper img {
+  filter: invert(54%) sepia(70%) saturate(2191%) hue-rotate(317deg) brightness(101%) contrast(91%) !important;
+}
+.button_container a.active {
+  background-color: #f46674;
+  color: white;
+}
+.button_container a.active img {
+  filter: brightness(0) invert(1) !important;
+}
+
+.filter_content {
+  background-color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  border-radius: 0.315rem;
+}
+.filter_content .form-group {
+  width: calc(50% - 0.625rem);
+  border: 1px solid #e3e3e3;
+  border-radius: 0.315rem;
+  padding: 0.625rem 1.25rem;
+  align-items: center;
+}
+.filter_content .form-group-title {
+  width: 15%;
+}
+.filter_content .form-group .container {
+  flex-direction: row;
+  gap: 0.625rem;
+}
+.filter_content .form-group .container select {
+  padding: 0 0.625rem;
+}
+.filter_content .form-group .container select[name=client-name] {
+  width: 30%;
+}
+.filter_content .form-group label:not(.day_item) {
+  position: absolute;
+  left: -9999%;
+}
+.filter_content .form-group .day_item_container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.625rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+.filter_content .form-group .day_item_container input[name=day_item] {
+  display: none;
+}
+.filter_content .form-group .day_item_container input[name=day_item] + .day_item {
+  font-size: 1rem;
+  background-color: #f7f7f7;
+  padding: 0.625rem;
+  border-radius: 0.315rem;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+.filter_content .form-group .day_item_container input[name=day_item]:checked + .day_item {
+  background-color: #e3e3e3;
+}
+.filter_content input[value=검색] {
+  border-radius: 0.315rem;
+  background-color: #f46674;
+  padding: 0.625rem 2rem;
+  color: #fff;
+}
+
+.page-id-06 .table_container {
+  padding: 2rem !important;
+}
+
+.form-group .container .wrapper.income .registration_text {
+  display: flex;
+  align-items: center;
+}
+.form-group .container .wrapper.income .registration_text .text_wrapper {
+  width: 5%;
+  text-align: right;
+}
+.form-group .container .wrapper .client-textarea-history ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 1.25rem;
+}
+.form-group .container .wrapper .client-textarea-history ul li .staff_info {
+  color: #aaa;
+}/*# sourceMappingURL=client.css.map */

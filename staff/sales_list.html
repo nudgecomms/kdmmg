@@ -8,14 +8,290 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 		<link href="/assets/css/index.css" rel="stylesheet" />
+		<link href="/assets/css/staff.css" rel="stylesheet" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="/assets/js/index.js"></script>
 		<script type="text/javascript" src="/assets/js/index_jQuery.js"></script>
 	</head>
-	<body>
+	<body class="page page-id-04 staff">
 		<div data-include-path="/common/header.html"></div>
 		<div id="body">
-            <div>영업 리스트</div>
-		</div>
+			<h1 class="page_title">직원관리
+				<span class="sub_title">(영업 리스트)</span>
+			</h1>
+			<section class="filter_container">
+				<div class="button_container">
+					<!-- 직원필터 -->
+					<form action="#">
+						<label for="staff">전체 직원</label>
+						<select name="staff" id="staff">
+							<option value="">전체 직원</option>
+							<option value="manager">관리자</option>
+							<option value="staff">직원</option>
+						</select>
+						<input type="submit" value="필터" />
+					</form>
+					<!-- 직원필터 end -->
+					<!-- 활성화여부 -->
+					<form action="#">
+						<label for="enable">활성화 여부</label>
+						<select name="enable" id="enable">
+							<option value="">활성화 여부</option>
+							<option value="enable">활성화</option>
+							<option value="disable">비활성화</option>
+						</select>
+						<input type="submit" value="적용" />
+					</form>
+					<!-- 활성화여부 end -->
+					<!-- 검색 -->
+					<form action="#">
+						<input type="search" name="search" placeholder="Search...">
+						<input type="submit"value="검색" />
+					</form>
+					<!-- 검색 end -->
+				</div>
+				<h5 class="total">총 <span class="num">120</span>명</h5>
+			</section><!--page_title end-->
+			<section class="table_container">
+				<table class="tm_staff_table">
+					<thead>
+						<tr>
+							<th class="table-list-checkbox"><input type="checkbox"></th>
+							<th class="table-list-date">등록일</th>
+							<th class="table-list-id">이름</th>
+							<th class="table-list-team">직급</th>
+							<th class="table-list-tm_manager">TM 관리자</th>
+							<th class="table-list-sales_manager">영업 관리자</th>
+							<th class="table-list-tm_staff">직원</th>
+							<th class="table-list-enable">활성화 여부</th>
+							<th class="table-list-management">관리</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox""></td>
+							<td class="table-list-date">2024-04-03</td>
+							<td class="table-list-id">홍길동</td>
+							<td class="table-list-team">관리자</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-tm_manager">영업 관리자 ID</td>
+							<td class="table-list-tm_staff">-</td>
+							<td class="table-list-enable">
+								<input role="switch" type="checkbox" />
+							</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/edit.svg" alt="수정">
+								</a>
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox""></td>
+							<td class="table-list-date">2024-04-03</td>
+							<td class="table-list-id">홍길동</td>
+							<td class="table-list-team">관리자</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-tm_manager">영업 관리자 ID</td>
+							<td class="table-list-tm_staff">-</td>
+							<td class="table-list-enable">
+								<input role="switch" type="checkbox" />
+							</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/edit.svg" alt="수정">
+								</a>
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox""></td>
+							<td class="table-list-date">2024-04-03</td>
+							<td class="table-list-id">홍길동</td>
+							<td class="table-list-team">직원</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-tm_manager">영업 관리자 ID</td>
+							<td class="table-list-tm_staff">직원 ID</td>
+							<td class="table-list-enable">
+								<input role="switch" type="checkbox" />
+							</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/edit.svg" alt="수정">
+								</a>
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox""></td>
+							<td class="table-list-date">2024-04-03</td>
+							<td class="table-list-id">홍길동</td>
+							<td class="table-list-team">관리자</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-tm_manager">영업 관리자 ID</td>
+							<td class="table-list-tm_staff">-</td>
+							<td class="table-list-enable">
+								<input role="switch" type="checkbox" />
+							</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/edit.svg" alt="수정">
+								</a>
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox""></td>
+							<td class="table-list-date">2024-04-03</td>
+							<td class="table-list-id">홍길동</td>
+							<td class="table-list-team">직원</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-tm_manager">영업 관리자 ID</td>
+							<td class="table-list-tm_staff">직원 ID</td>
+							<td class="table-list-enable">
+								<input role="switch" type="checkbox" />
+							</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/edit.svg" alt="수정">
+								</a>
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox""></td>
+							<td class="table-list-date">2024-04-03</td>
+							<td class="table-list-id">홍길동</td>
+							<td class="table-list-team">관리자</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-tm_manager">영업 관리자 ID</td>
+							<td class="table-list-tm_staff">-</td>
+							<td class="table-list-enable">
+								<input role="switch" type="checkbox" />
+							</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/edit.svg" alt="수정">
+								</a>
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox""></td>
+							<td class="table-list-date">2024-04-03</td>
+							<td class="table-list-id">홍길동</td>
+							<td class="table-list-team">직원</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-tm_manager">영업 관리자 ID</td>
+							<td class="table-list-tm_staff">직원 ID</td>
+							<td class="table-list-enable">
+								<input role="switch" type="checkbox" />
+							</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/edit.svg" alt="수정">
+								</a>
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox""></td>
+							<td class="table-list-date">2024-04-03</td>
+							<td class="table-list-id">홍길동</td>
+							<td class="table-list-team">직원</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-tm_manager">영업 관리자 ID</td>
+							<td class="table-list-tm_staff">직원 ID</td>
+							<td class="table-list-enable">
+								<input role="switch" type="checkbox" />
+							</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/edit.svg" alt="수정">
+								</a>
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox""></td>
+							<td class="table-list-date">2024-04-03</td>
+							<td class="table-list-id">홍길동</td>
+							<td class="table-list-team">직원</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-tm_manager">영업 관리자 ID</td>
+							<td class="table-list-tm_staff">직원 ID</td>
+							<td class="table-list-enable">
+								<input role="switch" type="checkbox" />
+							</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/edit.svg" alt="수정">
+								</a>
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox""></td>
+							<td class="table-list-date">2024-04-03</td>
+							<td class="table-list-id">홍길동</td>
+							<td class="table-list-team">관리자</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-tm_manager">영업 관리자 ID</td>
+							<td class="table-list-tm_staff">-</td>
+							<td class="table-list-enable">
+								<input role="switch" type="checkbox" />
+							</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/edit.svg" alt="수정">
+								</a>
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section><!--table_container end-->
+			<section class="table_bottom">
+				<a href="#" class="btn del">
+					<div class="img_wrapper">
+						<img src="/assets/images/common/del.svg" alt="del icon">
+					</div>
+					<div class="text_wrapper">Delete</div>
+				</a>
+				<div class="table-pagination">
+					<ul class="table-pagination-pages">
+						<li><a href="#" alt="first_page"><</a></li>
+						<li class="active">
+							<a href="#">1</a>
+						</li>
+						<li>
+							<a href="#">2</a>
+						</li>
+						<li><a href="#" alt="last_page">></a></li>
+					</ul>
+				</div>
+				<span class="empty"></span>
+			</section><!--bottom end-->
+		</div><!--#body end-->
 	</body>
 </html>

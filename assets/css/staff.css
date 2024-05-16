@@ -1,47 +1,6 @@
+@charset "UTF-8";
 .filter {
-  display: flex;
-  flex-direction: row;
-  gap: 1.25rem;
-  align-items: flex-end;
-  justify-content: space-between;
   margin-bottom: 2rem;
-}
-.filter .button_container {
-  display: flex;
-  flex-direction: row;
-  gap: 1.25rem;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.filter .button_container label {
-  position: absolute;
-  left: -9999%;
-}
-.filter .button_container select, .filter .button_container input {
-  color: #aaa;
-}
-.filter .button_container select, .filter .button_container input[type=search] {
-  width: 10rem;
-  padding: 0.315rem;
-  border-radius: 0.315rem;
-  border: 1px solid #aaa;
-}
-.filter .button_container select:focus-visible, .filter .button_container input[type=search]:focus-visible {
-  outline-color: #2e65fd;
-}
-.filter .button_container input[type=search] {
-  min-width: 15rem;
-}
-.filter .button_container input[type=submit] {
-  background-color: #fff;
-  border: 1px solid #2e65fd;
-  border-radius: 0.313rem;
-  padding: 0.313rem 1rem;
-  color: #2e65fd;
-  cursor: pointer;
-}
-.filter .total span {
-  font-size: 0.875rem !important;
 }
 
 .table_container .table-list-enable {
@@ -56,6 +15,7 @@
   border-radius: 1.25em;
   width: 2.25em;
   height: 1.25em;
+  cursor: pointer;
 }
 .table_container .table-list-enable input[role=switch]::before {
   content: "";
@@ -94,4 +54,84 @@
 }
 .table_container .table-list-management .img_wrapper img {
   filter: invert(65%) sepia(47%) saturate(5%) hue-rotate(9deg) brightness(95%) contrast(89%);
+}
+
+/* 탭 전체 스타일 */
+.tabs {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  margin: 0 auto;
+  /* 탭 스타일 */
+  /* 라디오 버튼 UI삭제*/
+  /* 탭 컨텐츠 스타일 */
+  /* 선택 된 탭 콘텐츠를 표시 */
+  /* 선택된 탭 스타일 */
+}
+.tabs .tab_item {
+  background-color: #ececec;
+  text-align: center;
+  float: left;
+  transition: all 0.3s ease;
+  border-radius: 0.313rem 0.313rem 0 0;
+  padding: 0.625rem 5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.625rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.tabs .tab_item .img_wrapper {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.313rem;
+  background-color: #aaa;
+  border-radius: 50px;
+}
+.tabs .tab_item .img_wrapper img {
+  filter: brightness(0) invert(1);
+}
+.tabs .tab_item .text_wrapper {
+  font-size: 1.125rem;
+  color: #aaa;
+  font-weight: 500;
+}
+.tabs .tab_item[for=staff] .img_wrapper img {
+  width: 90%;
+  height: 90%;
+}
+.tabs input[name=tab_item]:checked + .tab_item {
+  background-color: #fff;
+}
+.tabs input[name=tab_item]:checked + .tab_item .img_wrapper {
+  background-color: #2e65fd;
+}
+.tabs input[name=tab_item]:checked + .tab_item .text_wrapper {
+  color: #2e65fd;
+}
+.tabs input[name=tab_item] {
+  display: none;
+}
+.tabs .tab_content {
+  display: none;
+  padding: 2rem 1.25rem;
+  clear: both;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 0 0 0.313rem 0.313rem;
+}
+.tabs #staff:checked ~ #staff_content,
+.tabs #manager:checked ~ #manager_content {
+  display: block;
+}
+.tabs .tabs input:checked + .tab_item {
+  background-color: #000;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .tabs .tab_item {
+    padding: 0.625rem;
+    width: 50%;
+  }
 }/*# sourceMappingURL=staff.css.map */

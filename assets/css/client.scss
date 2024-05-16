@@ -1,0 +1,51 @@
+@import '_mixin', '_variables';
+
+//리스트
+.button_container{gap:0.625rem !important;
+  a{border-color: $main_color_02; color: $main_color_02;
+    .img_wrapper{width: 15px; display: flex;
+      img{@include filter_02;}
+    }
+
+    &.active{background-color: $main_color_02; color: white;
+      img{filter:brightness(0) invert(1) !important;}
+    }
+  }
+}
+.filter_content{background-color: #fff; padding: 2rem; @include flex($justify:flex-end); flex-wrap: wrap; border-radius: 0.315rem;
+  .form-group{width: calc(50% - 0.625rem); @include border($grey_03); border-radius: 0.315rem; padding: 0.625rem 1.25rem; align-items: center;
+    &-title{width: 15%;}
+    .container{flex-direction: row; gap: 0.625rem;
+      select{padding: 0 0.625rem;
+        &[name=client-name]{width: 30%;}
+      }
+    }
+
+    label:not(.day_item){position: absolute; left: -9999%;}
+    .day_item_container{@include flex($gap:0.625rem, $justify:space-between); width: 100%;
+      input[name=day_item]{display: none;}
+      input[name=day_item] + .day_item{font-size: 1rem; background-color: $grey_05; padding: 0.625rem; border-radius: 0.315rem; width: 100%; text-align: center; cursor: pointer;}
+      input[name=day_item]:checked + .day_item{background-color: $grey_03;}
+    }
+  }
+  input[value=검색]{border-radius: 0.315rem; background-color: $main_color_02; padding: 0.625rem 2rem; color: #fff;}
+}
+//리스트 end
+//등록
+.page-id-06{
+  .table_container{padding: 2rem !important;}
+}
+
+.form-group{
+  .container .wrapper{
+    &.income .registration_text{display: flex; align-items: center;
+      .text_wrapper{width: 5%; text-align: right;}
+    }
+    .client-textarea-history{
+      ul{@include flex($direction:column); margin-top: 1.25rem;
+        li .staff_info{color: $grey_02;}
+      }
+    }
+  }
+}
+//등록 end

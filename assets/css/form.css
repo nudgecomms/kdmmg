@@ -1,0 +1,124 @@
+@charset "UTF-8";
+.registration_text {
+  width: 100%;
+  border-width: 0 0 1px 0 !important;
+  border: solid #e3e3e3;
+  padding: 0.625rem;
+  border-radius: 0;
+}
+.registration_text input, .registration_text textarea {
+  width: 100% !important;
+  min-height: 2.5rem;
+  font-size: 1rem !important;
+  padding: 0;
+  border: 0;
+}
+.registration_text input:not(.registration_text input[type=submit], .registration_text input[type=checkbox], .registration_text textarea[type=submit], .registration_text textarea[type=checkbox]):-webkit-autofill, .registration_text input:not(.registration_text input[type=submit], .registration_text input[type=checkbox], .registration_text textarea[type=submit], .registration_text textarea[type=checkbox]):-webkit-autofill:hover, .registration_text input:not(.registration_text input[type=submit], .registration_text input[type=checkbox], .registration_text textarea[type=submit], .registration_text textarea[type=checkbox]):-webkit-autofill:focus, .registration_text input:not(.registration_text input[type=submit], .registration_text input[type=checkbox], .registration_text textarea[type=submit], .registration_text textarea[type=checkbox]):-webkit-autofill:active, .registration_text textarea:not(.registration_text input[type=submit], .registration_text input[type=checkbox], .registration_text textarea[type=submit], .registration_text textarea[type=checkbox]):-webkit-autofill, .registration_text textarea:not(.registration_text input[type=submit], .registration_text input[type=checkbox], .registration_text textarea[type=submit], .registration_text textarea[type=checkbox]):-webkit-autofill:hover, .registration_text textarea:not(.registration_text input[type=submit], .registration_text input[type=checkbox], .registration_text textarea[type=submit], .registration_text textarea[type=checkbox]):-webkit-autofill:focus, .registration_text textarea:not(.registration_text input[type=submit], .registration_text input[type=checkbox], .registration_text textarea[type=submit], .registration_text textarea[type=checkbox]):-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-transition: background-color 9999s ease-out;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: #000 !important;
+}
+
+label {
+  font-size: 1.125rem;
+}
+
+.filter_content .registration_text {
+  border: none;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.form-group h3.form-group-title {
+  width: 20%;
+  font-weight: 700;
+}
+.form-group .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+.form-group .container .wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+.form-group .container .wrapper .registration_label {
+  font-weight: 700;
+  width: 20%;
+}
+.form-group .container .wrapper.textarea {
+  align-items: flex-start;
+  margin-top: 1.25rem;
+}
+.form-group .container .wrapper.textarea .registration_text {
+  border: none;
+  padding: 0;
+}
+.form-group .container .wrapper.textarea .registration_text textarea {
+  height: 6.25rem !important;
+  padding: 0.625rem;
+  border: 1px solid #e3e3e3;
+  resize: none;
+}
+.form-group .container:not(.filter_content .container) {
+  border-width: 2px 0 0 0 !important;
+  border: solid #000;
+  padding-top: 1.25rem;
+}
+.form-group:not(.form-group.step_01, .filter_content .form-group) {
+  margin-top: 5rem;
+}
+
+.page input[value=등록] {
+  margin-top: 5rem;
+  padding: 1.258rem 6.25rem;
+  border-radius: 0.315rem;
+  color: white;
+  font-weight: 700;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.page.staff input[value=등록] {
+  background-color: #2e65fd;
+}
+.page.client input[value=등록] {
+  background-color: #f46674;
+}
+
+@media (max-width: 767px) {
+  .registration_text {
+    padding: 0 0 0.313rem;
+  }
+  .form-group {
+    flex-direction: column;
+  }
+  .form-group h3.form-group-title {
+    width: 100%;
+  }
+  .form-group .container {
+    gap: 2.5rem;
+  }
+  .form-group .container .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+  }
+  .form-group .container .wrapper .registration_label {
+    width: 100%;
+  }
+}/*# sourceMappingURL=form.css.map */

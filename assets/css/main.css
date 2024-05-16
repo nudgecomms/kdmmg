@@ -70,6 +70,9 @@
 .top_container_table > div.new_staff .table_container-title .button_wrapper img {
   filter: invert(31%) sepia(69%) saturate(2758%) hue-rotate(217deg) brightness(99%) contrast(106%) !important;
 }
+.top_container_table > div.new_staff .table_container-title .table-list-team, .top_container_table > div.new_staff .table_container-title .table-list-position {
+  width: 5rem;
+}
 
 .bottom.container a.button_container {
   display: flex;
@@ -89,7 +92,7 @@
   background-color: #757575;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   .top_container_table {
     flex-direction: column;
   }

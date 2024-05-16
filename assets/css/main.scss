@@ -27,6 +27,10 @@
     &.new_staff{width: calc(45% - 0.625rem);
       .table_container-title{background-color: $main_color_01;
         .button_wrapper img{@include filter_01;}
+        
+        .table-list{
+          &-team, &-position{width: 5rem;}
+        }
       }
     }
   }

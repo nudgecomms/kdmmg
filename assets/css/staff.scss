@@ -1,21 +1,11 @@
 @import '_mixin', '_variables';
 
-.filter{@include flex($justify:space-between,$align:flex-end); margin-bottom: 2rem;
-  .button_container{@include flex;
-    label{position: absolute; left: -9999%;}
-    select,input{color: $grey_02;}
-    select,input[type=search]{width: 10rem; padding: 0.315rem; border-radius: 0.315rem; @include border($grey_02);
-      &:focus-visible{outline-color: $main_color_01;}
-    }
-    input[type=search]{min-width: 15rem;}
-    input[type=submit]{background-color: #fff; @include border($main_color_01); border-radius: 0.313rem; padding: 0.313rem  1rem; color: $main_color_01; cursor: pointer;}
-  }
-  .total span{font-size: 0.875rem !important;}
-}
+//list
+.filter{margin-bottom: 2rem;}
 .table_container{
   .table-list{
     &-enable{width: 7rem;
-      input[role=switch]{appearance: none; position: relative; border: max(2px, 0.1em) solid $grey_02; border-radius: 1.25em; width: 2.25em; height: 1.25em;
+      input[role=switch]{appearance: none; position: relative; border: max(2px, 0.1em) solid $grey_02; border-radius: 1.25em; @include size(2.25em, 1.25em); cursor: pointer;
         &::before{content: ""; position: absolute; left: 0; width: 1em; height: 1em; border-radius: 50%; transform: scale(0.8); background-color: gray; transition: left 250ms linear;}
         &:checked{background-color: $main_color_01; border-color: $main_color_01;
           &::before{background-color: #fff; left: 1rem;}
@@ -31,5 +21,47 @@
         img{@include filter_grey_02;}
       }
     }
+  }
+}
+//list end
+// registration
+/* 탭 전체 스타일 */
+.tabs{margin-top: 50px; padding-bottom: 40px; margin: 0 auto;
+  
+  /* 탭 스타일 */
+  .tab_item {background-color: $grey_04; text-align: center; float: left; transition: all 0.3s ease; border-radius: 0.313rem 0.313rem 0 0; padding: 0.625rem 5rem; @include flex($gap:0.625rem, $align:center, $justify:center); cursor: pointer; 
+    .img_wrapper{@include size(2rem, 2rem); padding: 0.313rem; background-color: $grey_02; border-radius: 50px;
+      img{@include filter_white;}
+    }
+    .text_wrapper{font-size: 1.125rem; color: $grey_02; font-weight: 500}
+
+    &[for="staff"]{
+      .img_wrapper img{@include size(90%,90%);}
+    }
+  }
+
+  // 탭 스타일 active
+  input[name="tab_item"]:checked + .tab_item{background-color: #fff;
+    .img_wrapper{background-color: $main_color_01;}
+    .text_wrapper{color: $main_color_01;}
+  }
+
+  /* 라디오 버튼 UI삭제*/
+  input[name="tab_item"] {display: none;}
+
+  /* 탭 컨텐츠 스타일 */
+  .tab_content {display: none; padding: 2rem 1.25rem; clear: both; overflow: hidden; background-color: #fff; border-radius: 0 0 0.313rem 0.313rem;}
+
+  /* 선택 된 탭 콘텐츠를 표시 */
+  #staff:checked ~ #staff_content,
+  #manager:checked ~ #manager_content{display: block;}
+
+  /* 선택된 탭 스타일 */
+  .tabs input:checked + .tab_item {background-color: #000;color: #fff;}
+}
+// registration end
+@include mb{
+  .tabs{
+    .tab_item{padding: 0.625rem; width: 50%;}
   }
 }

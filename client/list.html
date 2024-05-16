@@ -8,14 +8,145 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 		<link href="/assets/css/index.css" rel="stylesheet" />
+		<link href="/assets/css/client.css" rel="stylesheet" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="/assets/js/index.js"></script>
 		<script type="text/javascript" src="/assets/js/index_jQuery.js"></script>
 	</head>
-	<body>
+	<body class="page page-id-06 client">
 		<div data-include-path="/common/header.html"></div>
 		<div id="body">
-            <div>고객관리 > 리스트</div>
+			<h1 class="page_title">고객관리
+				<span class="sub_title">(리스트)</span>
+			</h1>
+			<section class="filter_container">
+				<div class="button_container">
+					<a href="#" class="btn filter active">
+						<div class="img_wrapper">
+							<img src="/assets/images/common/filter.svg" alt="filter icon">
+						</div>
+						<div class="text_wrapper">Filter</div>
+					</a>
+					<a href="#" class="btn download">
+						<div class="img_wrapper">
+							<img src="/assets/images/common/download.svg" alt="download icon">
+						</div>
+						<div class="text_wrapper">Download</div>
+					</a>
+				</div>
+				<h5 class="total">총 <span class="num">120</span>명</h5>
+			</section><!--page_title end-->
+			<section class="filter_content">
+				<div class="form-group">
+					<h4 class="form-group-title">TM</h4>
+					<div class="container">
+						<fieldset class="wrapper">
+							<label for="tm-manager-id" class="registration_label">TM 관리자</label>
+							<select name="tm-manager-id" class="registration_text" id="tm-manager-id">
+								<option value="">관리자를 선택해주세요.</option>
+								<option value="tm-manager-id-01">TM 관리자 ID 01</option>
+								<option value="tm-manager-id-02">TM 관리자 ID 02</option>
+								<option value="tm-manager-id-03">TM 관리자 ID 03</option>
+								<option value="tm-manager-id-04">TM 관리자 ID 04</option>
+								<option value="tm-manager-id-05">TM 관리자 ID 05</option>
+							</select>
+						</fieldset>
+						<fieldset class="wrapper">
+							<label for="tm-staff-id" class="registration_label">TM 직원</label>
+							<select name="tm-staff-id" class="registration_text" id="tm-staff-id">
+								<option value="">직원를 선택해주세요.</option>
+								<option value="tm-staff-id-01">TM 직원 ID 01</option>
+								<option value="tm-staff-id-02">TM 직원 ID 02</option>
+								<option value="tm-staff-id-03">TM 직원 ID 03</option>
+								<option value="tm-staff-id-04">TM 직원 ID 04</option>
+								<option value="tm-staff-id-05">TM 직원 ID 05</option>
+							</select>
+						</fieldset>
+						<fieldset class="wrapper">
+							<label for="tm-process-01" class="registration_label">TM 상태</label>
+							<select name="tm-process-01" class="registration_text" id="tm-process-01">
+								<option value="">상태 선택해주세요.</option>
+								<option value="tm-process-01-01">TM 상태 01-1</option>
+								<option value="tm-process-01-02">TM 상태 01-2</option>
+								<option value="tm-process-01-03">TM 상태 01-3</option>
+								<option value="tm-process-01-04">TM 상태 01-4</option>
+								<option value="tm-process-01-05">TM 상태 01-5</option>
+							</select>
+						</fieldset>
+					</div>
+				</div>
+				<div class="form-group">
+					<h4 class="form-group-title">날짜</h4>
+					<div class="day_item_container">
+						<input type="radio" name="day_item" id="today" value="오늘" />
+						<label class="day_item" for="today">오늘</label>
+						<input type="radio" name="day_item" id="yesterday" value="어제" />
+						<label class="day_item" for="yesterday">어제</label>
+						<input type="radio" name="day_item" id="week" value="이번주" />
+						<label class="day_item" for="week">이번주</label>
+						<input type="radio" name="day_item" id="month" value="이번달" />
+						<label class="day_item" for="month">이번달</label>
+						<input type="radio" name="day_item" id="custom_day" value="기간설정" />
+						<label class="day_item" for="custom_day">기간설정</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<h4 class="form-group-title">영업</h4>
+					<div class="container">
+						<fieldset class="wrapper">
+							<label for="sales-manager-id" class="registration_label">영업 관리자</label>
+							<select name="sales-manager-id" class="registration_text" id="sales-manager-id">
+								<option value="">관리자를 선택해주세요.</option>
+								<option value="sales-manager-id-01">영업 관리자 ID 01</option>
+								<option value="sales-manager-id-02">영업 관리자 ID 02</option>
+								<option value="sales-manager-id-03">영업 관리자 ID 03</option>
+								<option value="sales-manager-id-04">영업 관리자 ID 04</option>
+								<option value="sales-manager-id-05">영업 관리자 ID 05</option>
+							</select>
+						</fieldset>
+						<fieldset class="wrapper">
+							<label for="sales-staff-id" class="registration_label">sales 직원</label>
+							<select name="sales-staff-id" class="registration_text" id="sales-staff-id">
+								<option value="">직원를 선택해주세요.</option>
+								<option value="sales-staff-id-01">영업 직원 ID 01</option>
+								<option value="sales-staff-id-02">영업 직원 ID 02</option>
+								<option value="sales-staff-id-03">영업 직원 ID 03</option>
+								<option value="sales-staff-id-04">영업 직원 ID 04</option>
+								<option value="sales-staff-id-05">영업 직원 ID 05</option>
+							</select>
+						</fieldset>
+						<fieldset class="wrapper">
+							<label for="sales-process-02" class="registration_label">sales 상태</label>
+							<select name="sales-process-02" class="registration_text" id="sales-process-02">
+								<option value="">상태 선택해주세요.</option>
+								<option value="sales-process-02-01">영업 상태 01-1</option>
+								<option value="sales-process-02-02">영업 상태 01-2</option>
+								<option value="sales-process-02-03">영업 상태 01-3</option>
+								<option value="sales-process-02-04">영업 상태 01-4</option>
+								<option value="sales-process-02-05">영업 상태 01-5</option>
+							</select>
+						</fieldset>
+					</div>
+				</div>
+				<div class="form-group">
+					<h4 class="form-group-title">고객</h4>
+					<div class="container">
+						<fieldset class="wrapper">
+							<label for="client-name" class="registration_label">고객명</label>
+							<select name="client-name" class="registration_text" id="client-name">
+								<option value="">고객명</option>
+								<option value="client-name">고객명 01</option>
+								<option value="client-name">고객명 02</option>
+								<option value="client-name">고객명 03</option>
+								<option value="client-name">고객명 04</option>
+								<option value="client-name">고객명 05</option>
+							</select>
+							<input type="search" name="search" placeholder="Search...">
+						</fieldset>
+					</div>
+				</div>
+				<input type="submit" value="검색">
+			</section>
 		</div>
 	</body>
 </html>

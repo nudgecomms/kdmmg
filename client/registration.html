@@ -8,14 +8,171 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 		<link href="/assets/css/index.css" rel="stylesheet" />
+		<link href="/assets/css/client.css" rel="stylesheet" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="/assets/js/index.js"></script>
 		<script type="text/javascript" src="/assets/js/index_jQuery.js"></script>
 	</head>
-	<body>
+	<body class="page page-id-06 client">
 		<div data-include-path="/common/header.html"></div>
-		<div id="body">
-            <div>고객관리 > 등록</div>
+		<div id="body" class="registration">
+			<h1 class="page_title">고객관리
+				<span class="sub_title">(등록)</span>
+			</h1>
+			<form action="#" class="table_container">
+				<div class="step_01 form-group">
+					<h3 class="form-group-title">TM 정보</h3>
+					<div class="container">
+						<fieldset class="wrapper">
+							<label for="tm-mananger-id" class="registration_label">TM 관리자</label>
+							<select name="tm-mananger-id" class="registration_text" id="tm-mananger-id">
+								<option value="">관리자를 선택해주세요.</option>
+								<option value="tm-manager-id-01">관리자 ID 01</option>
+								<option value="tm-manager-id-02">관리자 ID 02</option>
+								<option value="tm-manager-id-03">관리자 ID 03</option>
+								<option value="tm-manager-id-04">관리자 ID 04</option>
+								<option value="tm-manager-id-05">관리자 ID 05</option>
+							</select>
+						</fieldset>
+						<fieldset class="wrapper">
+							<label for="tm-staff-id" class="registration_label">TM 직원</label>
+							<select name="tm-staff-id" class="registration_text" id="tm-staff-id">
+								<option value="">직원을 선택해주세요.</option>
+								<option value="tm-staff-id-01">직원 ID 01</option>
+								<option value="tm-staff-id-02">직원 ID 02</option>
+								<option value="tm-staff-id-03">직원 ID 03</option>
+								<option value="tm-staff-id-04">직원 ID 04</option>
+								<option value="tm-staff-id-05">직원 ID 05</option>
+							</select>
+						</fieldset>
+					</div>
+				</div>
+				<div class="step_02 form-group">
+					<h3 class="form-group-title">영업 정보</h3>
+					<div class="container">
+						<fieldset class="wrapper">
+							<label for="sales-mananger-id" class="registration_label">영업 관리자</label>
+							<select name="sales-mananger-id" class="registration_text" id="sales-mananger-id">
+								<option value="">관리자를 선택해주세요.</option>
+								<option value="sales-manager-id-01">관리자 ID 01</option>
+								<option value="sales-manager-id-02">관리자 ID 02</option>
+								<option value="sales-manager-id-03">관리자 ID 03</option>
+								<option value="sales-manager-id-04">관리자 ID 04</option>
+								<option value="sales-manager-id-05">관리자 ID 05</option>
+							</select>
+						</fieldset>
+						<fieldset class="wrapper">
+							<label for="sales-staff-id" class="registration_label">영업 직원</label>
+							<select name="sales-staff-id" class="registration_text" id="sales-staff-id">
+								<option value="">직원을 선택해주세요.</option>
+								<option value="sales-staff-id-01">직원 ID 01</option>
+								<option value="sales-staff-id-02">직원 ID 02</option>
+								<option value="sales-staff-id-03">직원 ID 03</option>
+								<option value="sales-staff-id-04">직원 ID 04</option>
+								<option value="sales-staff-id-05">직원 ID 05</option>
+							</select>
+						</fieldset>
+					</div>
+				</div>
+				<div class="step_03 form-group">
+					<h3 class="form-group-title">고객 정보</h3>
+					<div class="container">
+						<fieldset class="wrapper">
+							<label for="client-company" class="registration_label">회사명</label>
+							<div class="registration_text">
+								<input type="text" id="client-company" placeholder="회사명을 입력해주세요.">
+							</div>
+						</fieldset>
+						<fieldset class="wrapper">
+							<label for="client-name" class="registration_label">고객명</label>
+							<div class="registration_text">
+								<input type="text" id="client-name" placeholder="고객명을 입력해주세요.">
+							</div>
+						</fieldset>
+						<fieldset class="wrapper income">
+							<label for="client-income" class="registration_label">연봉</label>
+							<div class="registration_text">
+								<input type="number" id="client-income" placeholder="연봉을 입력해주세요.">
+								<div class="text_wrapper">만원</div>
+							</div>
+						</fieldset>
+						<fieldset class="wrapper">
+							<label for="client-personal" class="registration_label">주민번호</label>
+							<div class="registration_text">
+								<input type="number" id="client-personal" placeholder="주민번호을 입력해주세요.">
+							</div>
+						</fieldset>
+						<fieldset class="wrapper">
+							<label for="client-tel" class="registration_label">전화번호</label>
+							<div class="registration_text">
+								<input type="number" id="client-tel" placeholder="전화번호을 입력해주세요.">
+							</div>
+						</fieldset>
+						<fieldset class="wrapper">
+							<label for="client-jop" class="registration_label">직군</label>
+							<select name="client-jop" class="registration_text" id="client-jop">
+								<option value="">직군을 선택해주세요.</option>
+								<option value="client-jop-01">직군 01</option>
+								<option value="client-jop-02">직군 02</option>
+								<option value="client-jop-03">직군 03</option>
+								<option value="client-jop-04">직군 04</option>
+								<option value="client-jop-05">직군 05</option>
+							</select>
+						</fieldset>
+						<fieldset class="wrapper">
+							<label for="client-period" class="registration_label">근무기간</label>
+							<div class="registration_text">
+								<input type="text" id="client-period" placeholder="근무기간을 입력해주세요.">
+							</div>
+						</fieldset>
+						<fieldset class="wrapper">
+							<label for="client-process-01" class="registration_label">1차 처리상태</label>
+							<select name="client-process-01" class="registration_text" id="client-process-01">
+								<option value="">1차 처리상태를 선택해주세요.</option>
+								<option value="client-process-01-01">1차 처리상태 01</option>
+								<option value="client-process-01-02">1차 처리상태 02</option>
+								<option value="client-process-01-03">1차 처리상태 03</option>
+								<option value="client-process-01-04">1차 처리상태 04</option>
+								<option value="client-process-01-05">1차 처리상태 05</option>
+							</select>
+						</fieldset>
+						<fieldset class="wrapper">
+							<label for="client-process-02" class="registration_label">2차 처리상태</label>
+							<select name="client-process-02" class="registration_text" id="client-process-02">
+								<option value="">2차 처리상태를 선택해주세요.</option>
+								<option value="client-process-02-01">1차 처리상태 01</option>
+								<option value="client-process-02-02">1차 처리상태 02</option>
+								<option value="client-process-02-03">1차 처리상태 03</option>
+								<option value="client-process-02-04">1차 처리상태 04</option>
+								<option value="client-process-02-05">1차 처리상태 05</option>
+							</select>
+						</fieldset>
+						<fieldset class="wrapper textarea">
+							<label for="client-textarea" class="registration_label">하고싶은 말</label>
+							<div class="registration_text">
+								<textarea id="client-textarea" placeholder="하고싶은 말을 입력해주세요."></textarea>
+								<div class="client-textarea-history">
+									<ul>
+										<li>
+											<div class="staff_info">
+												<span class="id">Tm 관리자 Id</span> / <span class="day">2024-04-04 02:15:20</span>
+											</div>
+											<div class="client-textarea">현재 회생중입니다! 확인부탁드립니다!</div>
+										</li>
+										<li>
+											<div class="staff_info">
+												<span class="id">Tm 직원 Id</span> / <span class="day">2024-04-04 02:15:20</span>
+											</div>
+											<div class="client-textarea">A/S 확인중입니다.</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+				<input type="submit" name="submit" value="등록" class="registration_btn">
+			</form>
 		</div>
 	</body>
 </html>

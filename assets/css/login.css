@@ -37,25 +37,6 @@ body.login {
   position: absolute;
   left: -9999%;
 }
-.container .container_login__form input {
-  width: 100%;
-  min-height: 2.5rem;
-  background: none;
-  border-width: 0 0 1px 0 !important;
-  border: solid #e3e3e3;
-  font-size: 1rem;
-  padding: 0.625rem;
-}
-.container .container_login__form input:focus {
-  outline: none;
-}
-.container .container_login__form input:-webkit-autofill, .container .container_login__form input:-webkit-autofill:hover, .container .container_login__form input:-webkit-autofill:focus, .container .container_login__form input:-webkit-autofill:active {
-  -webkit-transition: background-color 5000s ease-in-out 0s;
-  transition: background-color 5000s ease-in-out 0s;
-  -webkit-transition: background-color 9999s ease-out;
-  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
-  -webkit-text-fill-color: #000 !important;
-}
 .container .container_login button[type=submit] {
   width: 100%;
   background-color: #000;

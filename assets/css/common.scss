@@ -4,7 +4,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video, button,input, div, article, section{line-height: 1.3em; font-size: 1rem; font-weight: 400;}
 img{@include size(100%, 100%);}
 #body{min-height: 100vh;background-color: $grey_05;}
-input,textarea{&::placeholder{color: $grey_03;}}
+
 .container{display: block;}
 
 h1{font-size: 2rem; font-weight: 700 !important;}
@@ -22,25 +22,42 @@ select{appearance: none; background-color: white !important;
 }
 select::-ms-expand{ display: none; } /*for IE10,11*/
 select,input:not(input[type=checkbox]){min-height: 33px;}
+input[type=number]{-moz-appearance: textfield;
+  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0;}
+}
+
+.filter_container .button_container input[type=submit], .btn{padding: 0.313rem 1rem; cursor: pointer; border-radius: 0.313rem;}
+.btn{@include flex($gap:5px, $align:center); @include border($grey_02);
+  .img_wrapper{width: 10px;}
+
+  &.del{color: $grey_02;
+    .img_wrapper{@include filter_grey_02;}
+  }
+}
 
 #body{padding: 0 2rem 0.625rem;
   .page_title,.section_title{line-height: 1; @include flex($align:flex-end,$gap:0.625rem); margin-bottom: 2rem;
     .sub_title{font-size: .8em; color: $grey_02; font-weight: 700;}
   }
   .section_title{margin-top: 3rem; justify-content: space-between;}
-  .table_container{background-color: #fff; padding: 1.25rem 1.25rem 0.625rem; border-radius: 0.625rem;
-    table{width: 100%;
+  .table_container{background-color: #fff; padding: 1.25rem 1.25rem 0.625rem; border-radius: 0.625rem; overflow-x: auto;
+    table{width: 100%; white-space: nowrap;
       tr{
         th,td{text-align: left;
-          &,a span{font-size: 0.875rem !important; font-weight: 400; color: $grey_02; }
+          &, a span{font-size: 0.875rem !important; font-weight: 400; color: $grey_02;}
           a{line-height: 1em !important;}
 
-          &.table-list-date{width: 12rem; min-width: 12rem;}
+          &.table-list{
+            &-date{width: 12rem; min-width: 12rem;}
+            &-checkbox{width: 30px;
+              input{position: relative; top: 1px;}
+            }
+          }
         }
         th{padding: 0 0 0.625rem;}
-        td{padding: 1rem 0; @include border_tnb(1px,0,$grey_05);
+        td{padding: 1rem 0; @include border_tnb($bottom:0,$color:$grey_05); vertical-align: middle;
           &.table-list{
-            &-name .client, &-jop, &-id,&-as{color: #000; font-weight: 500;}
+            &-name .client, &-jop, &-id, &-as{color: #000; font-weight: 500;}
             &-management{
               .img_wrapper{@include size(1rem, 1rem);}
             }
@@ -49,8 +66,33 @@ select,input:not(input[type=checkbox]){min-height: 33px;}
       }
     }
   }
+  .table_bottom{margin-top: 2rem; @include flex($justify:space-between, $align:center);
+    .table-pagination-pages{@include flex($gap:1.25rem); transform: translateX(-50%);
+      li{
+        a{color: $grey_02;}
+        &.active a{color: #000;}
+      }
+    }
+  }
+  //list
+  .filter_container{@include flex($justify:space-between,$align:flex-end); margin-bottom: 2rem;
+    .button_container{@include flex($gap:0.625rem 1.25rem);
+      label{position: absolute; left: -9999%;}
+      select,input{color: $grey_02;}
+      select,input[type=search]{width: 10rem; padding: 0.315rem; @include border($grey_02);
+        &:not(input[type=search]){border-radius: 0.315rem;}
+      }
+      input[type=search]{min-width: 15rem;}
+      input[type=submit]{background-color: #fff; @include border($main_color_01); color: $main_color_01; }
+    }
+    .total{width: 10%; text-align: right;
+      span{font-size: 0.875rem !important;}
+    }
+  }
+  //list end
 }
 @include pc{
+  table, tr, th, td{table-layout: fixed;}
   #body{margin-left: 15vw;
     .page_title{
       &:not(.section_title){min-height: 6.25rem;}
@@ -67,8 +109,8 @@ select,input:not(input[type=checkbox]){min-height: 33px;}
 
   #body{position: relative; top: 5rem; padding: 1.25rem 0.625rem 0.625rem;}
   .page_title,.section_title{margin-bottom: 1rem !important;}
-  .table_container{overflow-x: auto;
-    table{white-space: nowrap;
+  .table_container{
+    table{
       tr{
         th,td{
           &:not(&:first-child){padding: 1rem !important;}
@@ -78,6 +120,16 @@ select,input:not(input[type=checkbox]){min-height: 33px;}
       }
     }
   }
+  .filter_container{
+    .button_container{flex-wrap: wrap;
+      form{
+        &:last-child{width: 100%;}
+      }
+    }
+  }
+}
+@include max-tb{
+  #body{min-height: calc((100vh - 5rem));}
 }
 @include min-tb{
   .button_container.mb{display: none !important;}
@@ -85,4 +137,7 @@ select,input:not(input[type=checkbox]){min-height: 33px;}
 @include mb{
   .button_container.pc{display: none !important;}
   .container{width: 100%;}
+  .filter_container{flex-direction: column;
+    .total{width: 100%;}
+  }
 }

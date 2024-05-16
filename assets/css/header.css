@@ -240,12 +240,12 @@
   display: block;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .header.header_mb, .overlay {
     display: none;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   .header.header_pc {
     width: 90%;
     z-index: 2;
@@ -256,7 +256,7 @@
     transform: translateX(0);
   }
 }
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1279px) {
   .header.header_pc .logo {
     width: 30% !important;
   }

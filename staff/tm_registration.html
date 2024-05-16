@@ -8,14 +8,130 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 		<link href="/assets/css/index.css" rel="stylesheet" />
+		<link href="/assets/css/staff.css" rel="stylesheet" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="/assets/js/index.js"></script>
 		<script type="text/javascript" src="/assets/js/index_jQuery.js"></script>
 	</head>
-	<body>
+	<body class="page page-id-03 staff">
 		<div data-include-path="/common/header.html"></div>
-		<div id="body">
-            <div>TM 등록</div>
-		</div>
+		<div id="body" class="registration">
+			<h1 class="page_title">직원관리
+				<span class="sub_title">(TM 등록)</span>
+			</h1>
+			<section class="tabs">
+				<input id="staff" type="radio" name="tab_item" checked>
+				<label class="tab_item" for="staff">
+					<div class="img_wrapper"><img src="/assets/images/common/main_icon_02.svg" alt="직원등록"></div>
+					<div class="text_wrapper">직원등록</div>
+				</label>
+				<input id="manager" type="radio" name="tab_item">
+				<label class="tab_item" for="manager">
+					<div class="img_wrapper"><img src="/assets/images/common/manager.svg" alt="관리자등록"></div>
+					<div class="text_wrapper">관리자등록</div>
+				</label>
+				<div class="tab_content" id="staff_content">
+					<form action="#">
+						<div class="step_01 form-group">
+							<h3 class="form-group-title">담당 관리자</h3>
+							<div class="container">
+								<fieldset class="wrapper">
+									<label for="tm-manager-id" class="registration_label">TM 관리자</label>
+									<select name="tm-manager-id" class="registration_text" id="tm-manager-id">
+										<option value="">관리자를 선택해주세요.</option>
+										<option value="tm-manager-id-01">관리자 ID 01</option>
+										<option value="tm-manager-id-02">관리자 ID 02</option>
+										<option value="tm-manager-id-03">관리자 ID 03</option>
+										<option value="tm-manager-id-04">관리자 ID 04</option>
+										<option value="tm-manager-id-05">관리자 ID 05</option>
+									</select>
+								</fieldset>
+							</div>
+						</div>
+						<div class="step_02 form-group">
+							<h3 class="form-group-title">관리자 정보</h3>
+							<div class="container">
+								<fieldset class="wrapper">
+									<label for="tm-manager-name" class="registration_label">이름</label>
+									<div class="registration_text">
+										<input type="text" id="tm-manager-name" placeholder="이름을 입력해주세요.">
+									</div>
+								</fieldset>
+								<fieldset class="wrapper">
+									<label for="tm-manager-id"class="registration_label">아이디</label>
+									<div class="registration_text">
+										<input type="text" id="tm-manager-id" placeholder="아이디를 입력해주세요.">
+									</div>
+								</fieldset>
+								<fieldset class="wrapper">
+									<label for="tm-manager-password"class="registration_label">비밀번호</label>
+									<div class="registration_text">
+										<input type="password" id="tm-manager-password" placeholder="비밀번호를 입력해주세요.">
+									</div>
+								</fieldset>
+								<fieldset class="wrapper">
+									<label for="tm-manager-password"class="registration_label">비밀번호</label>
+									<div class="registration_text">
+										<input type="conform_password" id="tm-manager-password" placeholder="비밀번호를 입력해주세요.">
+									</div>
+								</fieldset>
+								<fieldset class="wrapper">
+									<label for="tm-manager-ip"class="registration_label">아이피</label>
+									<div class="registration_text">
+										<input type="text" ip="tm-manager-id" placeholder="아이피를 입력해주세요.">
+									</div>
+								</fieldset>
+							</div>
+						</div>
+						<input type="submit" name="submit" value="등록" class="registration_btn">
+					</form>
+				</div>
+				<div class="tab_content" id="manager_content">
+					<form action="#">
+						<div class="step_01 form-group">
+							<h3 class="form-group-title">관리자 정보</h3>
+							<div class="container">
+								<fieldset class="wrapper">
+									<label for="tm-manager-name" class="registration_label">이름</label>
+									<div class="registration_text">
+										<input type="text" id="tm-manager-name" placeholder="이름을 입력해주세요.">
+									</div>
+								</fieldset>
+								<fieldset class="wrapper">
+									<label for="tm-manager-id"class="registration_label">아이디</label>
+									<div class="registration_text">
+										<input type="text" id="tm-manager-id" placeholder="아이디를 입력해주세요.">
+									</div>
+								</fieldset>
+								<fieldset class="wrapper">
+									<label for="tm-manager-password"class="registration_label">비밀번호</label>
+									<div class="registration_text">
+										<input type="password" id="tm-manager-password" placeholder="비밀번호를 입력해주세요.">
+									</div>
+								</fieldset>
+								<fieldset class="wrapper">
+									<label for="tm-manager-password"class="registration_label">비밀번호</label>
+									<div class="registration_text">
+										<input type="conform_password" id="tm-manager-password" placeholder="비밀번호를 입력해주세요.">
+									</div>
+								</fieldset>
+								<fieldset class="wrapper">
+									<label for="tm-manager-ip"class="registration_label">아이피</label>
+									<div class="registration_text">
+										<input type="text" ip="tm-manager-id" placeholder="아이피를 입력해주세요.">
+									</div>
+								</fieldset>
+								<fieldset class="wrapper textarea">
+									<label for="tm-manager-textarea" class="registration_label">메모</label>
+									<div class="registration_text">
+										<textarea id="tm-manager-textarea" placeholder="메모를 입력해주세요."></textarea>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+						<input type="submit" name="submit" value="등록" class="registration_btn">
+					</form>
+				</div>
+		</section>
 	</body>
 </html>

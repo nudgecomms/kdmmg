@@ -15,14 +15,6 @@ img {
   background-color: #f7f7f7;
 }
 
-input::-moz-placeholder, textarea::-moz-placeholder {
-  color: #e3e3e3;
-}
-
-input::placeholder, textarea::placeholder {
-  color: #e3e3e3;
-}
-
 .container {
   display: block;
 }
@@ -69,6 +61,38 @@ select, input:not(input[type=checkbox]) {
   min-height: 33px;
 }
 
+input[type=number] {
+  -moz-appearance: textfield;
+}
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.filter_container .button_container input[type=submit], .btn {
+  padding: 0.313rem 1rem;
+  cursor: pointer;
+  border-radius: 0.313rem;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid #aaa;
+}
+.btn .img_wrapper {
+  width: 10px;
+}
+.btn.del {
+  color: #aaa;
+}
+.btn.del .img_wrapper {
+  filter: invert(65%) sepia(47%) saturate(5%) hue-rotate(9deg) brightness(95%) contrast(89%);
+}
+
 #body {
   padding: 0 2rem 0.625rem;
 }
@@ -94,9 +118,11 @@ select, input:not(input[type=checkbox]) {
   background-color: #fff;
   padding: 1.25rem 1.25rem 0.625rem;
   border-radius: 0.625rem;
+  overflow-x: auto;
 }
 #body .table_container table {
   width: 100%;
+  white-space: nowrap;
 }
 #body .table_container table tr th, #body .table_container table tr td {
   text-align: left;
@@ -113,6 +139,13 @@ select, input:not(input[type=checkbox]) {
   width: 12rem;
   min-width: 12rem;
 }
+#body .table_container table tr th.table-list-checkbox, #body .table_container table tr td.table-list-checkbox {
+  width: 30px;
+}
+#body .table_container table tr th.table-list-checkbox input, #body .table_container table tr td.table-list-checkbox input {
+  position: relative;
+  top: 1px;
+}
 #body .table_container table tr th {
   padding: 0 0 0.625rem;
 }
@@ -120,6 +153,7 @@ select, input:not(input[type=checkbox]) {
   padding: 1rem 0;
   border-width: 1px 0 0 0 !important;
   border: solid #f7f7f7;
+  vertical-align: middle;
 }
 #body .table_container table tr td.table-list-name .client, #body .table_container table tr td.table-list-jop, #body .table_container table tr td.table-list-id, #body .table_container table tr td.table-list-as {
   color: #000;
@@ -129,8 +163,78 @@ select, input:not(input[type=checkbox]) {
   width: 1rem;
   height: 1rem;
 }
+#body .table_bottom {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+}
+#body .table_bottom .table-pagination-pages {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transform: translateX(-50%);
+}
+#body .table_bottom .table-pagination-pages li a {
+  color: #aaa;
+}
+#body .table_bottom .table-pagination-pages li.active a {
+  color: #000;
+}
+#body .filter_container {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+#body .filter_container .button_container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.625rem 1.25rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#body .filter_container .button_container label {
+  position: absolute;
+  left: -9999%;
+}
+#body .filter_container .button_container select, #body .filter_container .button_container input {
+  color: #aaa;
+}
+#body .filter_container .button_container select, #body .filter_container .button_container input[type=search] {
+  width: 10rem;
+  padding: 0.315rem;
+  border: 1px solid #aaa;
+}
+#body .filter_container .button_container select:not(input[type=search]), #body .filter_container .button_container input[type=search]:not(input[type=search]) {
+  border-radius: 0.315rem;
+}
+#body .filter_container .button_container input[type=search] {
+  min-width: 15rem;
+}
+#body .filter_container .button_container input[type=submit] {
+  background-color: #fff;
+  border: 1px solid #2e65fd;
+  color: #2e65fd;
+}
+#body .filter_container .total {
+  width: 10%;
+  text-align: right;
+}
+#body .filter_container .total span {
+  font-size: 0.875rem !important;
+}
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
+  table, tr, th, td {
+    table-layout: fixed;
+  }
   #body {
     margin-left: 15vw;
   }
@@ -138,7 +242,7 @@ select, input:not(input[type=checkbox]) {
     min-height: 6.25rem;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   h1 {
     font-size: calc(1.8rem + 0.2 * (100vw - 20rem) / 1023);
   }
@@ -165,18 +269,23 @@ select, input:not(input[type=checkbox]) {
   .page_title, .section_title {
     margin-bottom: 1rem !important;
   }
-  .table_container {
-    overflow-x: auto;
-  }
-  .table_container table {
-    white-space: nowrap;
-  }
   .table_container table tr th:not(.table_container table tr th:first-child, .table_container table tr td:first-child), .table_container table tr td:not(.table_container table tr th:first-child, .table_container table tr td:first-child) {
     padding: 1rem !important;
   }
   .table_container table tr th.table-list-date, .table_container table tr td.table-list-date {
     width: 9rem !important;
     min-width: 9rem !important;
+  }
+  .filter_container .button_container {
+    flex-wrap: wrap;
+  }
+  .filter_container .button_container form:last-child {
+    width: 100%;
+  }
+}
+@media (max-width: 1279px) {
+  #body {
+    min-height: calc(100vh - 5rem);
   }
 }
 @media (min-width: 768px) {
@@ -189,6 +298,12 @@ select, input:not(input[type=checkbox]) {
     display: none !important;
   }
   .container {
+    width: 100%;
+  }
+  .filter_container {
+    flex-direction: column;
+  }
+  .filter_container .total {
     width: 100%;
   }
 }/*# sourceMappingURL=common.css.map */
