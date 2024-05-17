@@ -1,0 +1,170 @@
+@import '_mixin', '_variables';
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video, button,input, div, article, section{line-height: 1.3em; font-size: 1rem; font-weight: 400;}
+img{@include size(100%, 100%);}
+#body{min-height: 100vh;background-color: $grey_05;}
+
+.container{display: block;}
+
+h1{font-size: 2rem; font-weight: 700 !important;}
+h2{font-size: 1.8rem; font-weight: 700 !important;}
+h3{font-size: 1.5rem;}
+h4,p{font-size: 1rem;}
+h5{font-size: 0.875rem;}
+h6{font-size: 0.75rem;}
+
+select{appearance: none; background-color: white !important;
+  -webkit-appearance: none; /* for chrome */
+  -moz-appearance: none; /*for firefox*/
+
+  background:url('/assets/images/common/select_icon.svg') no-repeat right 10px center; background-size: 10px;
+}
+select::-ms-expand{ display: none; } /*for IE10,11*/
+select,input:not(input[type=checkbox]){min-height: 33px;}
+input[type=number]{-moz-appearance: textfield;
+  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0;}
+}
+input[type=search]{width: 100%;
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration{
+    display: none;
+  }
+}
+
+.filter_container .button_container input[type=submit], .btn{padding: 0.313rem 1rem; cursor: pointer; border-radius: 0.313rem;}
+.btn{@include flex($gap:5px, $align:center); @include border($grey_02);
+  .img_wrapper{width: 10px;}
+
+  &.del{color: $grey_02;
+    .img_wrapper{@include filter_grey_02;}
+  }
+}
+
+#body{padding: 0 2rem 0.625rem;
+  .page_title,.section_title{line-height: 1; @include flex($align:flex-end,$gap:0.625rem); margin-bottom: 2rem;
+    .sub_title{font-size: .8em; color: $grey_02; font-weight: 700;}
+  }
+  .section_title{margin-top: 3rem; justify-content: space-between;}
+  .table_container{background-color: #fff; padding: 1.25rem 1.25rem 0.625rem; border-radius: 0.625rem; overflow-x: auto;
+    &:not(.page-id-01 .table_container){margin-top: 2rem;}
+    table{width: 100%; white-space: nowrap;
+      tr{
+        th,td{text-align: left;
+          &, a span{font-size: 0.875rem !important; font-weight: 400; color: $grey_02;}
+          a{line-height: 1em !important;}
+
+          &.table-list{
+            &-date{width: 12rem; min-width: 12rem;}
+            &-checkbox{width: 30px;
+              input{position: relative; top: 1px;}
+            }
+            &-name,&-position{width: 10rem;}
+          }
+        }
+        th{padding: 0 0 0.625rem;}
+        td{padding: 1rem 0; @include border_tnb($bottom:0,$color:$grey_05); vertical-align: middle;
+          &.table-list{
+            &-name, &-name a, &-process-01, &-jop, &-id, &-as{color: #000; font-weight: 500; font-size: 0.875rem;}
+            &-management{
+              .img_wrapper{@include size(1rem, 1rem);
+                img{@include filter_grey_02;}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .table_bottom{margin-top: 2rem; @include flex($justify:space-between, $align:center);
+    .table-pagination-pages{@include flex($gap:1.25rem); transform: translateX(-50%);
+      li{
+        a{color: $grey_02;}
+        &.active a{color: #000;}
+      }
+    }
+  }
+  //list
+  .filter_container{@include flex($justify:space-between,$align:flex-end);
+    .button_container{@include flex($gap:0.625rem 1.25rem);
+      label{position: absolute; left: -9999%;}
+      select,input{color: $grey_02;}
+      select,input[type=search]{width: 10rem; padding: 0.315rem; @include border($grey_02);
+        &:not(input[type=search]){border-radius: 0.315rem;}
+      }
+      input[type=search]{min-width: 15rem;}
+      input[type=submit]{background-color: #fff; @include border($main_color_01); color: $main_color_01; }
+    }
+    .total{width: 10%; text-align: right;
+      span{font-size: 0.875rem !important;}
+    }
+  }
+  //list end
+}
+
+//popup
+.del_popup{@include center; z-index: 999; background-color: #fff; width: 20vw; border-radius: 0.315rem; display: none; opacity: 0; transition: .3s;
+  .top{text-align: center; padding: 2rem 0.625rem;}
+  .button_wrapper{display: flex;
+    &>a{width: 100%; text-align: center; padding: 1.25rem 0.625rem;
+      &:first-child{background-color: $grey_01; color: #fff; border-radius: 0 0 0 0.315rem;}
+      &:last-child{background-color: $grey_04; border-radius: 0 0 0.315rem 0;}
+    }
+  }
+  &.on{display: block; opacity: 1;}
+}
+//popup end
+@include pc{
+  table, tr, th, td{table-layout: fixed;}
+  #body{margin-left: 15vw;
+    .page_title{
+      &:not(.section_title){min-height: 6.25rem;}
+    }
+  }
+}
+@include max-tb{
+  h1{font-size: calc(1.8rem + 0.2 * ((100vw - 20rem) / 1023));}
+  h2{font-size: calc(1.6rem + 0.2 * ((100vw - 20rem) / 1023));}
+  h3{font-size: calc(1.3rem + 0.2 * ((100vw - 20rem) / 1023));}
+  h4,p{font-size: calc(1rem + 0.2 * ((100vw - 20rem) / 1023));}
+  h5{font-size: calc(0.875rem + 0.2 * ((100vw - 20rem) / 1023));}
+  h6{font-size: calc(0.75rem + 0.2 * ((100vw - 20rem) / 1023));}
+
+  #body{position: relative; top: 5rem; padding: 1.25rem 0.625rem 0.625rem;}
+  .page_title,.section_title{margin-bottom: 1rem !important;}
+  .table_container{
+    table{
+      tr{
+        th,td{
+          &:not(&:first-child){padding: 1rem !important;}
+
+          &.table-list-date{width: 9rem !important; min-width: 9rem !important;}
+        }
+      }
+    }
+  }
+  .filter_container{
+    .button_container{flex-wrap: wrap;
+      form{
+        &:last-child{width: 100%;}
+      }
+    }
+  }
+}
+@include max-tb{
+  #body{min-height: calc((100vh - 5rem));}
+  .del_popup{width: 40vw;}
+}
+@include min-tb{
+  .button_container.mb{display: none !important;}
+}
+@include mb{
+  .del_popup{width: 90vw;}
+  .button_container.pc{display: none !important;}
+  .container{width: 100%;}
+  .filter_container{flex-direction: column !important;
+    .total{width: 100% !important;}
+  }
+}
