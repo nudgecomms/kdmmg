@@ -31,6 +31,14 @@
   justify-content: flex-end;
   flex-wrap: wrap;
   border-radius: 0.315rem;
+  margin-top: 0.625rem;
+  opacity: 0;
+  display: none;
+  transition: 0.3s;
+}
+.filter_content.active {
+  display: flex;
+  opacity: 1;
 }
 .filter_content .form-group {
   width: calc(50% - 0.625rem);
@@ -86,6 +94,14 @@
   color: #fff;
 }
 
+.client_table th.table-list-management, .client_table td.table-list-management {
+  width: 3.75rem;
+}
+.client_table td.table-list-name a {
+  color: #f46674 !important;
+  font-weight: 700 !important;
+}
+
 .page-id-06 .table_container {
   padding: 2rem !important;
 }
@@ -95,7 +111,7 @@
   align-items: center;
 }
 .form-group .container .wrapper.income .registration_text .text_wrapper {
-  width: 5%;
+  width: 10%;
   text-align: right;
 }
 .form-group .container .wrapper .client-textarea-history ul {
@@ -108,4 +124,42 @@
 }
 .form-group .container .wrapper .client-textarea-history ul li .staff_info {
   color: #aaa;
+}
+
+@media (max-width: 1279px) {
+  .filter_content {
+    flex-direction: column;
+  }
+  .filter_content .form-group {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .filter_container {
+    flex-direction: row !important;
+  }
+  .filter_container .total {
+    width: auto !important;
+  }
+  .filter_content {
+    padding: 1.25rem;
+  }
+  .filter_content .form-group {
+    padding: 1rem;
+  }
+  .filter_content .form-group-title {
+    width: 100%;
+  }
+  .filter_content .form-group .container {
+    flex-direction: column;
+  }
+  .filter_content .form-group .day_item_container {
+    flex-wrap: wrap;
+  }
+  .filter_content .form-group .day_item_container label {
+    width: calc(50% - 0.3125rem) !important;
+  }
+  .filter_content .form-group .day_item_container label:last-child {
+    width: 100% !important;
+  }
 }/*# sourceMappingURL=client.css.map */

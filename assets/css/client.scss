@@ -12,7 +12,10 @@
     }
   }
 }
-.filter_content{background-color: #fff; padding: 2rem; @include flex($justify:flex-end); flex-wrap: wrap; border-radius: 0.315rem;
+.filter_content{background-color: #fff; padding: 2rem; @include flex($justify:flex-end); flex-wrap: wrap; border-radius: 0.315rem; margin-top: 0.625rem; opacity: 0; display: none; transition: .3s;
+
+  &.active{display: flex; opacity: 1;}
+
   .form-group{width: calc(50% - 0.625rem); @include border($grey_03); border-radius: 0.315rem; padding: 0.625rem 1.25rem; align-items: center;
     &-title{width: 15%;}
     .container{flex-direction: row; gap: 0.625rem;
@@ -30,6 +33,19 @@
   }
   input[value=검색]{border-radius: 0.315rem; background-color: $main_color_02; padding: 0.625rem 2rem; color: #fff;}
 }
+
+.client_table{
+  th,td{
+    &.table-list{
+      &-management{width: 3.75rem;}
+    }
+  }
+  td{
+    &.table-list{
+      &-name a{color: $main_color_02 !important; font-weight: 700 !important;}
+    }
+  }
+}
 //리스트 end
 //등록
 .page-id-06{
@@ -39,7 +55,7 @@
 .form-group{
   .container .wrapper{
     &.income .registration_text{display: flex; align-items: center;
-      .text_wrapper{width: 5%; text-align: right;}
+      .text_wrapper{width: 10%; text-align: right;}
     }
     .client-textarea-history{
       ul{@include flex($direction:column); margin-top: 1.25rem;
@@ -49,3 +65,24 @@
   }
 }
 //등록 end
+@include max-tb{
+  .filter_content{flex-direction: column;
+    .form-group{width: 100%;}
+  }
+}
+@include mb{
+  .filter_container{flex-direction: row !important;
+    .total{width: auto !important;}
+  }
+  .filter_content{padding: 1.25rem;
+    .form-group{padding: 1rem;
+      &-title{width: 100%;}
+      .container{flex-direction: column;}
+      .day_item_container{flex-wrap: wrap;
+        label{width: calc(50% - 0.3125rem) !important;
+          &:last-child{width: 100% !important;}
+        }
+      }
+    }
+  }
+}

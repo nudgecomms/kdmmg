@@ -9,12 +9,11 @@
 		<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 		<link href="/assets/css/index.css" rel="stylesheet" />
 		<link href="/assets/css/staff.css" rel="stylesheet" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="/assets/js/index.js"></script>
-		<script type="text/javascript" src="/assets/js/index_jQuery.js"></script>
 	</head>
 	<body class="page page-id-02 staff">
 		<div data-include-path="/common/header.html"></div>
+		<div data-include-path="/common/del_popup.html"></div>
 		<div id="body">
 			<h1 class="page_title">직원관리
 				<span class="sub_title">(TM 리스트)</span>
@@ -58,8 +57,8 @@
 						<tr>
 							<th class="table-list-checkbox"><input type="checkbox"></th>
 							<th class="table-list-date">등록일</th>
-							<th class="table-list-id">이름</th>
-							<th class="table-list-team">직급</th>
+							<th class="table-list-name">이름</th>
+							<th class="table-list-position">직급</th>
 							<th class="table-list-tm_manager">TM 관리자</th>
 							<th class="table-list-tm_staff">직원</th>
 							<th class="table-list-enable">활성화 여부</th>
@@ -70,12 +69,12 @@
 						<tr>
 							<td class="table-list-checkbox"><input type="checkbox""></td>
 							<td class="table-list-date">2024-04-03</td>
-							<td class="table-list-id">홍길동</td>
-							<td class="table-list-team">관리자</td>
+							<td class="table-list-name">홍길동</td>
+							<td class="table-list-position">관리자</td>
 							<td class="table-list-tm_manager">관리자 ID</td>
 							<td class="table-list-tm_staff">-</td>
 							<td class="table-list-enable">
-								<input role="switch" type="checkbox" />
+								<input role="switch" type="checkbox" checked="on"/>
 							</td>
 							<td class="table-list-management">
 								<a href="#" class="img_wrapper">
@@ -89,12 +88,12 @@
 						<tr>
 							<td class="table-list-checkbox"><input type="checkbox""></td>
 							<td class="table-list-date">2024-04-03</td>
-							<td class="table-list-id">홍길동</td>
-							<td class="table-list-team">직원</td>
+							<td class="table-list-name">홍길동</td>
+							<td class="table-list-position">직원</td>
 							<td class="table-list-tm_manager">관리자 ID</td>
 							<td class="table-list-tm_staff">직원 ID</td>
 							<td class="table-list-enable">
-								<input role="switch" type="checkbox" />
+								<input role="switch" type="checkbox" checked="on"/>
 							</td>
 							<td class="table-list-management">
 								<a href="#" class="img_wrapper">
@@ -108,12 +107,12 @@
 						<tr>
 							<td class="table-list-checkbox"><input type="checkbox""></td>
 							<td class="table-list-date">2024-04-03</td>
-							<td class="table-list-id">홍길동</td>
-							<td class="table-list-team">직원</td>
+							<td class="table-list-name">홍길동</td>
+							<td class="table-list-position">직원</td>
 							<td class="table-list-tm_manager">관리자 ID</td>
 							<td class="table-list-tm_staff">직원 ID</td>
 							<td class="table-list-enable">
-								<input role="switch" type="checkbox" />
+								<input role="switch" type="checkbox" checked="on"/>
 							</td>
 							<td class="table-list-management">
 								<a href="#" class="img_wrapper">
@@ -127,12 +126,12 @@
 						<tr>
 							<td class="table-list-checkbox"><input type="checkbox""></td>
 							<td class="table-list-date">2024-04-03</td>
-							<td class="table-list-id">홍길동</td>
-							<td class="table-list-team">관리자</td>
+							<td class="table-list-name">홍길동</td>
+							<td class="table-list-position">관리자</td>
 							<td class="table-list-tm_manager">관리자 ID</td>
 							<td class="table-list-tm_staff">-</td>
 							<td class="table-list-enable">
-								<input role="switch" type="checkbox" />
+								<input role="switch" type="checkbox" checked="on"/>
 							</td>
 							<td class="table-list-management">
 								<a href="#" class="img_wrapper">
@@ -146,12 +145,12 @@
 						<tr>
 							<td class="table-list-checkbox"><input type="checkbox""></td>
 							<td class="table-list-date">2024-04-03</td>
-							<td class="table-list-id">홍길동</td>
-							<td class="table-list-team">직원</td>
+							<td class="table-list-name">홍길동</td>
+							<td class="table-list-position">직원</td>
 							<td class="table-list-tm_manager">관리자 ID</td>
 							<td class="table-list-tm_staff">직원 ID</td>
 							<td class="table-list-enable">
-								<input role="switch" type="checkbox" />
+								<input role="switch" type="checkbox" checked="on"/>
 							</td>
 							<td class="table-list-management">
 								<a href="#" class="img_wrapper">
@@ -165,12 +164,12 @@
 						<tr>
 							<td class="table-list-checkbox"><input type="checkbox""></td>
 							<td class="table-list-date">2024-04-03</td>
-							<td class="table-list-id">홍길동</td>
-							<td class="table-list-team">직원</td>
+							<td class="table-list-name">홍길동</td>
+							<td class="table-list-position">직원</td>
 							<td class="table-list-tm_manager">관리자 ID</td>
 							<td class="table-list-tm_staff">직원 ID</td>
 							<td class="table-list-enable">
-								<input role="switch" type="checkbox" />
+								<input role="switch" type="checkbox" checked="on"/>
 							</td>
 							<td class="table-list-management">
 								<a href="#" class="img_wrapper">
@@ -184,12 +183,12 @@
 						<tr>
 							<td class="table-list-checkbox"><input type="checkbox""></td>
 							<td class="table-list-date">2024-04-03</td>
-							<td class="table-list-id">홍길동</td>
-							<td class="table-list-team">직원</td>
+							<td class="table-list-name">홍길동</td>
+							<td class="table-list-position">직원</td>
 							<td class="table-list-tm_manager">관리자 ID</td>
 							<td class="table-list-tm_staff">직원 ID</td>
 							<td class="table-list-enable">
-								<input role="switch" type="checkbox" />
+								<input role="switch" type="checkbox" checked="on"/>
 							</td>
 							<td class="table-list-management">
 								<a href="#" class="img_wrapper">
@@ -203,12 +202,12 @@
 						<tr>
 							<td class="table-list-checkbox"><input type="checkbox""></td>
 							<td class="table-list-date">2024-04-03</td>
-							<td class="table-list-id">홍길동</td>
-							<td class="table-list-team">관리자</td>
+							<td class="table-list-name">홍길동</td>
+							<td class="table-list-position">관리자</td>
 							<td class="table-list-tm_manager">관리자 ID</td>
 							<td class="table-list-tm_staff">-</td>
 							<td class="table-list-enable">
-								<input role="switch" type="checkbox" />
+								<input role="switch" type="checkbox" checked="on"/>
 							</td>
 							<td class="table-list-management">
 								<a href="#" class="img_wrapper">
@@ -222,12 +221,12 @@
 						<tr>
 							<td class="table-list-checkbox"><input type="checkbox""></td>
 							<td class="table-list-date">2024-04-03</td>
-							<td class="table-list-id">홍길동</td>
-							<td class="table-list-team">직원</td>
+							<td class="table-list-name">홍길동</td>
+							<td class="table-list-position">직원</td>
 							<td class="table-list-tm_manager">관리자 ID</td>
 							<td class="table-list-tm_staff">직원 ID</td>
 							<td class="table-list-enable">
-								<input role="switch" type="checkbox" />
+								<input role="switch" type="checkbox" checked="on"/>
 							</td>
 							<td class="table-list-management">
 								<a href="#" class="img_wrapper">
@@ -241,12 +240,12 @@
 						<tr>
 							<td class="table-list-checkbox"><input type="checkbox""></td>
 							<td class="table-list-date">2024-04-03</td>
-							<td class="table-list-id">홍길동</td>
-							<td class="table-list-team">직원</td>
+							<td class="table-list-name">홍길동</td>
+							<td class="table-list-position">직원</td>
 							<td class="table-list-tm_manager">관리자 ID</td>
 							<td class="table-list-tm_staff">직원 ID</td>
 							<td class="table-list-enable">
-								<input role="switch" type="checkbox" />
+								<input role="switch" type="checkbox" checked="on"/>
 							</td>
 							<td class="table-list-management">
 								<a href="#" class="img_wrapper">

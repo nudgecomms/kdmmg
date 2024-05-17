@@ -233,10 +233,10 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
-  z-index: 0;
+  z-index: 1;
   display: none;
 }
-.overlay.slide_on {
+.overlay.on {
   display: block;
 }
 

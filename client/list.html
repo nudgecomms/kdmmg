@@ -9,12 +9,10 @@
 		<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 		<link href="/assets/css/index.css" rel="stylesheet" />
 		<link href="/assets/css/client.css" rel="stylesheet" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="/assets/js/index.js"></script>
-		<script type="text/javascript" src="/assets/js/index_jQuery.js"></script>
-	</head>
 	<body class="page page-id-06 client">
 		<div data-include-path="/common/header.html"></div>
+		<div data-include-path="/common/del_popup.html"></div>
 		<div id="body">
 			<h1 class="page_title">고객관리
 				<span class="sub_title">(리스트)</span>
@@ -54,7 +52,7 @@
 						<fieldset class="wrapper">
 							<label for="tm-staff-id" class="registration_label">TM 직원</label>
 							<select name="tm-staff-id" class="registration_text" id="tm-staff-id">
-								<option value="">직원를 선택해주세요.</option>
+								<option value="">직원을 선택해주세요.</option>
 								<option value="tm-staff-id-01">TM 직원 ID 01</option>
 								<option value="tm-staff-id-02">TM 직원 ID 02</option>
 								<option value="tm-staff-id-03">TM 직원 ID 03</option>
@@ -63,14 +61,14 @@
 							</select>
 						</fieldset>
 						<fieldset class="wrapper">
-							<label for="tm-process-01" class="registration_label">TM 상태</label>
-							<select name="tm-process-01" class="registration_text" id="tm-process-01">
-								<option value="">상태 선택해주세요.</option>
-								<option value="tm-process-01-01">TM 상태 01-1</option>
-								<option value="tm-process-01-02">TM 상태 01-2</option>
-								<option value="tm-process-01-03">TM 상태 01-3</option>
-								<option value="tm-process-01-04">TM 상태 01-4</option>
-								<option value="tm-process-01-05">TM 상태 01-5</option>
+							<label for="client-process-01" class="registration_label">TM 상태</label>
+							<select name="client-process-01" class="registration_text" id="client-process-01">
+								<option value="">상태를 선택해주세요.</option>
+								<option value="client-process-01-01">TM 상태 01-1</option>
+								<option value="client-process-01-02">TM 상태 01-2</option>
+								<option value="client-process-01-03">TM 상태 01-3</option>
+								<option value="client-process-01-04">TM 상태 01-4</option>
+								<option value="client-process-01-05">TM 상태 01-5</option>
 							</select>
 						</fieldset>
 					</div>
@@ -107,7 +105,7 @@
 						<fieldset class="wrapper">
 							<label for="sales-staff-id" class="registration_label">sales 직원</label>
 							<select name="sales-staff-id" class="registration_text" id="sales-staff-id">
-								<option value="">직원를 선택해주세요.</option>
+								<option value="">직원을 선택해주세요.</option>
 								<option value="sales-staff-id-01">영업 직원 ID 01</option>
 								<option value="sales-staff-id-02">영업 직원 ID 02</option>
 								<option value="sales-staff-id-03">영업 직원 ID 03</option>
@@ -116,14 +114,14 @@
 							</select>
 						</fieldset>
 						<fieldset class="wrapper">
-							<label for="sales-process-02" class="registration_label">sales 상태</label>
-							<select name="sales-process-02" class="registration_text" id="sales-process-02">
-								<option value="">상태 선택해주세요.</option>
-								<option value="sales-process-02-01">영업 상태 01-1</option>
-								<option value="sales-process-02-02">영업 상태 01-2</option>
-								<option value="sales-process-02-03">영업 상태 01-3</option>
-								<option value="sales-process-02-04">영업 상태 01-4</option>
-								<option value="sales-process-02-05">영업 상태 01-5</option>
+							<label for="client-process-02" class="registration_label">sales 상태</label>
+							<select name="client-process-02" class="registration_text" id="client-process-02">
+								<option value="">상태를 선택해주세요.</option>
+								<option value="client-process-02-01">영업 상태 01-1</option>
+								<option value="client-process-02-02">영업 상태 01-2</option>
+								<option value="client-process-02-03">영업 상태 01-3</option>
+								<option value="client-process-02-04">영업 상태 01-4</option>
+								<option value="client-process-02-05">영업 상태 01-5</option>
 							</select>
 						</fieldset>
 					</div>
@@ -147,6 +145,247 @@
 				</div>
 				<input type="submit" value="검색">
 			</section>
+			<section class="table_container">
+				<table class="client_table">
+					<thead>
+						<tr>
+							<th class="table-list-checkbox"><input type="checkbox"></th>
+							<th class="table-list-date">등록일</th>
+							<th class="table-list-name">이름(TM직원)</th>
+							<th class="table-list-process-01">A/S여부</th>
+							<th class="table-list-jop">직군</th>
+							<th class="table-list-tm_manager">TM 관리자</th>
+							<th class="table-list-sales_manager">영업 관리자</th>
+							<th class="table-list-sales_staff">영업 직원</th>
+							<th class="table-list-process-02">영업 상태</th>
+							<th class="table-list-management">관리</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox"></td>
+							<td class="table-list-date">2024-04-03 11:43:31</td>
+							<td class="table-list-name">
+								<a href="#">박진석
+									<span class="table-list-tm_staff">(TM직원 ID)</span>
+								</a>
+							</td>
+							<td class="table-list-process-01">A/S 확정</td>
+							<td class="table-list-jop">사대유/현금수령</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-sales_manager">영업 관리자 ID</td>
+							<td class="table-list-sales_staff">영업 직원 ID</td>
+							<td class="table-list-process-02">부재 (연결안됨)</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox"></td>
+							<td class="table-list-date">2024-04-03 11:43:31</td>
+							<td class="table-list-name">
+								<a href="#">박진석
+									<span class="table-list-tm_staff">(TM직원 ID)</span>
+								</a>
+							</td>
+							<td class="table-list-process-01">A/S 확정</td>
+							<td class="table-list-jop">사대유/현금수령</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-sales_manager">영업 관리자 ID</td>
+							<td class="table-list-sales_staff">영업 직원 ID</td>
+							<td class="table-list-process-02">부재 (연결안됨)</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox"></td>
+							<td class="table-list-date">2024-04-03 11:43:31</td>
+							<td class="table-list-name">
+								<a href="#">박진석
+									<span class="table-list-tm_staff">(TM직원 ID)</span>
+								</a>
+							</td>
+							<td class="table-list-process-01">A/S 확정</td>
+							<td class="table-list-jop">사대유/현금수령</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-sales_manager">영업 관리자 ID</td>
+							<td class="table-list-sales_staff">영업 직원 ID</td>
+							<td class="table-list-process-02">부재 (연결안됨)</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox"></td>
+							<td class="table-list-date">2024-04-03 11:43:31</td>
+							<td class="table-list-name">
+								<a href="#">박진석
+									<span class="table-list-tm_staff">(TM직원 ID)</span>
+								</a>
+							</td>
+							<td class="table-list-process-01">A/S 확정</td>
+							<td class="table-list-jop">사대유/현금수령</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-sales_manager">영업 관리자 ID</td>
+							<td class="table-list-sales_staff">영업 직원 ID</td>
+							<td class="table-list-process-02">부재 (연결안됨)</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox"></td>
+							<td class="table-list-date">2024-04-03 11:43:31</td>
+							<td class="table-list-name">
+								<a href="#">박진석
+									<span class="table-list-tm_staff">(TM직원 ID)</span>
+								</a>
+							</td>
+							<td class="table-list-process-01">A/S 확정</td>
+							<td class="table-list-jop">사대유/현금수령</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-sales_manager">영업 관리자 ID</td>
+							<td class="table-list-sales_staff">영업 직원 ID</td>
+							<td class="table-list-process-02">부재 (연결안됨)</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox"></td>
+							<td class="table-list-date">2024-04-03 11:43:31</td>
+							<td class="table-list-name">
+								<a href="#">박진석
+									<span class="table-list-tm_staff">(TM직원 ID)</span>
+								</a>
+							</td>
+							<td class="table-list-process-01">A/S 확정</td>
+							<td class="table-list-jop">사대유/현금수령</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-sales_manager">영업 관리자 ID</td>
+							<td class="table-list-sales_staff">영업 직원 ID</td>
+							<td class="table-list-process-02">부재 (연결안됨)</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox"></td>
+							<td class="table-list-date">2024-04-03 11:43:31</td>
+							<td class="table-list-name">
+								<a href="#">박진석
+									<span class="table-list-tm_staff">(TM직원 ID)</span>
+								</a>
+							</td>
+							<td class="table-list-process-01">A/S 확정</td>
+							<td class="table-list-jop">사대유/현금수령</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-sales_manager">영업 관리자 ID</td>
+							<td class="table-list-sales_staff">영업 직원 ID</td>
+							<td class="table-list-process-02">부재 (연결안됨)</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox"></td>
+							<td class="table-list-date">2024-04-03 11:43:31</td>
+							<td class="table-list-name">
+								<a href="#">박진석
+									<span class="table-list-tm_staff">(TM직원 ID)</span>
+								</a>
+							</td>
+							<td class="table-list-process-01">A/S 확정</td>
+							<td class="table-list-jop">사대유/현금수령</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-sales_manager">영업 관리자 ID</td>
+							<td class="table-list-sales_staff">영업 직원 ID</td>
+							<td class="table-list-process-02">부재 (연결안됨)</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox"></td>
+							<td class="table-list-date">2024-04-03 11:43:31</td>
+							<td class="table-list-name">
+								<a href="#">박진석
+									<span class="table-list-tm_staff">(TM직원 ID)</span>
+								</a>
+							</td>
+							<td class="table-list-process-01">A/S 확정</td>
+							<td class="table-list-jop">사대유/현금수령</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-sales_manager">영업 관리자 ID</td>
+							<td class="table-list-sales_staff">영업 직원 ID</td>
+							<td class="table-list-process-02">부재 (연결안됨)</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-list-checkbox"><input type="checkbox"></td>
+							<td class="table-list-date">2024-04-03 11:43:31</td>
+							<td class="table-list-name">
+								<a href="#">박진석
+									<span class="table-list-tm_staff">(TM직원 ID)</span>
+								</a>
+							</td>
+							<td class="table-list-process-01">A/S 확정</td>
+							<td class="table-list-jop">사대유/현금수령</td>
+							<td class="table-list-tm_manager">TM 관리자 ID</td>
+							<td class="table-list-sales_manager">영업 관리자 ID</td>
+							<td class="table-list-sales_staff">영업 직원 ID</td>
+							<td class="table-list-process-02">부재 (연결안됨)</td>
+							<td class="table-list-management">
+								<a href="#" class="img_wrapper">
+									<img src="/assets/images/common/del.svg" alt="삭제">
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section><!--table_container end-->
+			<section class="table_bottom">
+				<a href="#" class="btn del">
+					<div class="img_wrapper">
+						<img src="/assets/images/common/del.svg" alt="del icon">
+					</div>
+					<div class="text_wrapper">Delete</div>
+				</a>
+				<div class="table-pagination">
+					<ul class="table-pagination-pages">
+						<li><a href="#" alt="first_page"><</a></li>
+						<li class="active">
+							<a href="#">1</a>
+						</li>
+						<li>
+							<a href="#">2</a>
+						</li>
+						<li><a href="#" alt="last_page">></a></li>
+					</ul>
+				</div>
+				<span class="empty"></span>
+			</section><!--bottom end-->
 		</div>
 	</body>
 </html>

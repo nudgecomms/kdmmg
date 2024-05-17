@@ -82,8 +82,8 @@
     }
   }
 }
-.overlay{@include size(100vw, 100vh); background-color: rgb(0,0,0,0.7); position: fixed; z-index: 0; display: none;
-  &.slide_on{display: block;}
+.overlay{@include size(100vw, 100vh); background-color: rgb(0,0,0,0.7); position: fixed; z-index: 1; display: none;
+  &.on{display: block;}
 }
 @include pc{
   .header.header_mb, .overlay{display: none;}

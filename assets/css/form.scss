@@ -18,7 +18,7 @@ label{font-size: 1.125rem;}
   h3.form-group-title{width: 20%; font-weight: 700;}
   .container{@include flex($direction:column); width: 100%;
     .wrapper{@include flex($align:center); width: 100%;
-      .registration_label{font-weight: 700; width: 20%;}
+      .registration_label{font-weight: 400; width: 20%;}
 
       &.textarea{align-items: flex-start; margin-top: 1.25rem;
         .registration_text{border: none; padding: 0;

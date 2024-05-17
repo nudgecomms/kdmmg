@@ -52,9 +52,6 @@
 .table_container .table-list-management .img_wrapper:first-child {
   margin-right: 0.313rem;
 }
-.table_container .table-list-management .img_wrapper img {
-  filter: invert(65%) sepia(47%) saturate(5%) hue-rotate(9deg) brightness(95%) contrast(89%);
-}
 
 /* 탭 전체 스타일 */
 .tabs {

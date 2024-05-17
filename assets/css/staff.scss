@@ -18,7 +18,6 @@
     &-management{width: 5rem;
       .img_wrapper{
         &:first-child{margin-right: 0.313rem;}
-        img{@include filter_grey_02;}
       }
     }
   }

@@ -41,6 +41,7 @@ input[type=number]{-moz-appearance: textfield;
   }
   .section_title{margin-top: 3rem; justify-content: space-between;}
   .table_container{background-color: #fff; padding: 1.25rem 1.25rem 0.625rem; border-radius: 0.625rem; overflow-x: auto;
+    &:not(.page-id-01 .table_container){margin-top: 2rem;}
     table{width: 100%; white-space: nowrap;
       tr{
         th,td{text-align: left;
@@ -52,14 +53,17 @@ input[type=number]{-moz-appearance: textfield;
             &-checkbox{width: 30px;
               input{position: relative; top: 1px;}
             }
+            &-name,&-position{width: 10rem;}
           }
         }
         th{padding: 0 0 0.625rem;}
         td{padding: 1rem 0; @include border_tnb($bottom:0,$color:$grey_05); vertical-align: middle;
           &.table-list{
-            &-name .client, &-jop, &-id, &-as{color: #000; font-weight: 500;}
+            &-name, &-name a, &-process-01, &-jop, &-id, &-as{color: #000; font-weight: 500; font-size: 0.875rem;}
             &-management{
-              .img_wrapper{@include size(1rem, 1rem);}
+              .img_wrapper{@include size(1rem, 1rem);
+                img{@include filter_grey_02;}
+              }
             }
           }
         }
@@ -75,7 +79,7 @@ input[type=number]{-moz-appearance: textfield;
     }
   }
   //list
-  .filter_container{@include flex($justify:space-between,$align:flex-end); margin-bottom: 2rem;
+  .filter_container{@include flex($justify:space-between,$align:flex-end);
     .button_container{@include flex($gap:0.625rem 1.25rem);
       label{position: absolute; left: -9999%;}
       select,input{color: $grey_02;}
@@ -91,6 +95,19 @@ input[type=number]{-moz-appearance: textfield;
   }
   //list end
 }
+
+//popup
+.del_popup{@include center; z-index: 999; background-color: #fff; width: 20vw; border-radius: 0.315rem; display: none; opacity: 0; transition: .3s;
+  .top{text-align: center; padding: 2rem 0.625rem;}
+  .button_wrapper{display: flex;
+    &>a{width: 100%; text-align: center; padding: 1.25rem 0.625rem;
+      &:first-child{background-color: $grey_01; color: #fff; border-radius: 0 0 0 0.315rem;}
+      &:last-child{background-color: $grey_04; border-radius: 0 0 0.315rem 0;}
+    }
+  }
+  &.on{display: block; opacity: 1;}
+}
+//popup end
 @include pc{
   table, tr, th, td{table-layout: fixed;}
   #body{margin-left: 15vw;
@@ -130,14 +147,16 @@ input[type=number]{-moz-appearance: textfield;
 }
 @include max-tb{
   #body{min-height: calc((100vh - 5rem));}
+  .del_popup{width: 40vw;}
 }
 @include min-tb{
   .button_container.mb{display: none !important;}
 }
 @include mb{
+  .del_popup{width: 90vw;}
   .button_container.pc{display: none !important;}
   .container{width: 100%;}
-  .filter_container{flex-direction: column;
-    .total{width: 100%;}
+  .filter_container{flex-direction: column !important;
+    .total{width: 100% !important;}
   }
 }
